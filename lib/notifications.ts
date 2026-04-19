@@ -1,6 +1,16 @@
-import type { Lead } from "@prisma/client";
 import { PROJECT_TYPE_OPTIONS } from "@/lib/constants";
 import { getResend } from "@/lib/resend-client";
+
+/** Minimal fields needed for outbound lead emails (contact intake payload). */
+export type LeadEmailPayload = {
+  id: string;
+  fullName: string;
+  email: string;
+  phone: string;
+  company?: string | null;
+  projectType: string;
+  message: string;
+};
 
 function escapeHtml(text: string): string {
   return text
@@ -34,14 +44,14 @@ function getOwnerInbox(): string | null {
   );
 }
 
-export async function notifyOwnerAboutLead(lead: Lead) {
+export async function notifyOwnerAboutLead(lead: LeadEmailPayload) {
   const resend = getResend();
   const from = getFromAddress();
   const to = getOwnerInbox();
 
   if (!resend || !from || !to) {
     if (process.env.NODE_ENV === "development") {
-      console.info("[lead-notification:owner skipped — missing RESEND_* or LEAD_NOTIFY_EMAIL]", {
+      console.info("[lead-notification:owner skipped — missing Resend config or owner inbox env]", {
         id: lead.id,
         fullName: lead.fullName,
         email: lead.email,
@@ -72,7 +82,7 @@ export async function notifyOwnerAboutLead(lead: Lead) {
 }
 
 /** Automatski odgovor korisniku koji je poslao kontakt obrazac. */
-export async function sendLeadSubmissionConfirmation(lead: Lead) {
+export async function sendLeadSubmissionConfirmation(lead: LeadEmailPayload) {
   const resend = getResend();
   const from = getFromAddress();
 

@@ -1,80 +1,45 @@
 # Adria SmartPass
 
-Production-structured Next.js SaaS marketing site + lightweight CRM for a smart lock and access control installation company.
+Next.js marketing site with **email-only** contact lead capture (Resend). **No database.**
 
 ## Stack
 
 - Next.js (App Router) + TypeScript
 - Tailwind CSS + Framer Motion
 - React Hook Form + Zod
-- Prisma ORM + PostgreSQL
-- JWT session auth (secure cookie) for admin CRM
+- Resend (transactional email)
 
 ## Features
 
 - Marketing pages: `/`, `/services`, `/products`, `/contact`
-- Lead capture flow with full validation and rate limiting
-- CRM dashboard at `/admin` with:
-  - lead metrics
-  - filters (status, project type)
-  - status pipeline updates
-  - lead detail modal
-  - delete actions
-- Protected APIs:
-  - `POST /api/leads` (public)
-  - `GET /api/leads` (protected + pagination)
-  - `PATCH /api/leads/:id` (protected)
-  - `DELETE /api/leads/:id` (protected)
-- Auth routes:
-  - `POST /api/auth/login`
-  - `POST /api/auth/logout`
-  - `GET /api/auth/me`
+- Contact form: `POST /api/contact` — rate limiting, validation, owner notification + user confirmation via Resend
 
-## Environment Setup
+## Environment
 
-Copy `.env.example` to `.env` and configure:
+Copy `.env.example` to `.env`. Only Resend-related variables are used — see `.env.example` for the exact list.
 
-```env
-DATABASE_URL=
-DIRECT_URL=
-JWT_SECRET=
-ADMIN_EMAIL=
-ADMIN_PASSWORD_HASH=
-NEXT_PUBLIC_COMPANY_NAME=
-```
-
-Generate an admin password hash (bcrypt):
-
-```bash
-node -e "const b=require('bcryptjs'); b.hash('ChangeMe123!',10).then(console.log)"
-```
-
-## Local Development
+## Local development
 
 ```bash
 npm install
-npm run prisma:generate
-npm run prisma:migrate
 npm run dev
 ```
 
-Open:
+Open `http://localhost:3000`.
 
-- `http://localhost:3000`
-- `http://localhost:3000/admin/login`
+## Deploy (Vercel)
 
-## Project Structure
+See **[docs/VERCEL-DEPLOY.md](./docs/VERCEL-DEPLOY.md)** for required env vars and checklist.
+
+## Project structure
 
 ```text
 app/
-  admin/
-  api/
+  api/contact/
   contact/
-  products/
-  services/
+  ...
 components/
 hooks/
 lib/
-prisma/
 types/
 ```
