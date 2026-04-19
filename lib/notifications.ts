@@ -1,6 +1,9 @@
 import { PROJECT_TYPE_OPTIONS } from "@/lib/constants";
 import { getResend } from "@/lib/resend-client";
 
+/** Verified production sender — must match Resend domain setup for `adriasmartpass.com`. */
+const RESEND_FROM = "Adria SmartPass <info@adriasmartpass.com>";
+
 /** Minimal fields needed for outbound lead emails (contact intake payload). */
 export type LeadEmailPayload = {
   id: string;
@@ -31,11 +34,6 @@ function projectTypeLabel(projectType: string): string {
   return opt?.label ?? projectType;
 }
 
-function getFromAddress(): string | null {
-  const from = process.env.RESEND_FROM_EMAIL?.trim();
-  return from || null;
-}
-
 function getOwnerInbox(): string | null {
   return (
     process.env.LEAD_NOTIFY_EMAIL?.trim() ||
@@ -46,10 +44,9 @@ function getOwnerInbox(): string | null {
 
 export async function notifyOwnerAboutLead(lead: LeadEmailPayload) {
   const resend = getResend();
-  const from = getFromAddress();
   const to = getOwnerInbox();
 
-  if (!resend || !from || !to) {
+  if (!resend || !to) {
     if (process.env.NODE_ENV === "development") {
       console.info("[lead-notification:owner skipped — missing Resend config or owner inbox env]", {
         id: lead.id,
@@ -74,7 +71,7 @@ export async function notifyOwnerAboutLead(lead: LeadEmailPayload) {
   `;
 
   await resend.emails.send({
-    from,
+    from: RESEND_FROM,
     to,
     subject: `Novi upit: ${lead.fullName}`,
     html
@@ -84,11 +81,10 @@ export async function notifyOwnerAboutLead(lead: LeadEmailPayload) {
 /** Automatski odgovor korisniku koji je poslao kontakt obrazac. */
 export async function sendLeadSubmissionConfirmation(lead: LeadEmailPayload) {
   const resend = getResend();
-  const from = getFromAddress();
 
-  if (!resend || !from) {
+  if (!resend) {
     if (process.env.NODE_ENV === "development") {
-      console.info("[lead-notification:user skipped — missing RESEND_API_KEY or RESEND_FROM_EMAIL]", {
+      console.info("[lead-notification:user skipped — missing RESEND_API_KEY]", {
         id: lead.id,
         email: lead.email
       });
@@ -111,7 +107,7 @@ export async function sendLeadSubmissionConfirmation(lead: LeadEmailPayload) {
   `;
 
   await resend.emails.send({
-    from,
+    from: RESEND_FROM,
     to: lead.email,
     subject: "Zaprimili smo vaš upit",
     html
