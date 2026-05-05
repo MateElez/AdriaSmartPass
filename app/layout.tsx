@@ -12,15 +12,15 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Adria SmartPass | Pametne brave i kontrola pristupa",
+  title: "Adria Security Systems | Premium video nadzor i smart security za nekretnine",
   description:
-    "Pametne brave i kontrola pristupa za apartmane, kratkoročni najam, male hotele i poslovne prostore u Hrvatskoj."
+    "Adria Security Systems — premium smart property security company. Projektiranje i ugradnja video nadzora i monitoring sustava za vile, kratkoročni najam, hotele i poslovne portfelje u Hrvatskoj."
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#f8fafc"
+  themeColor: "#e2e8f0"
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

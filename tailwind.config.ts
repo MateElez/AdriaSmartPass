@@ -32,7 +32,7 @@ const config: Config = {
       },
       backgroundImage: {
         "hero-grid":
-          "radial-gradient(circle at top right, rgba(47,127,125,0.15), transparent 50%), radial-gradient(circle at bottom left, rgba(245,158,11,0.1), transparent 45%)"
+          "radial-gradient(circle at top right, rgba(148,163,184,0.55), transparent 55%), radial-gradient(circle at bottom left, rgba(226,232,240,0.9), transparent 48%)"
       }
     }
   },

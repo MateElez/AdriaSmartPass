@@ -34,21 +34,21 @@ export default async function BlogPostPage({ params }: { params: ParamsInput }) 
       <article className="relative z-10 mx-auto w-full max-w-3xl px-4 pb-16 pt-14 text-slate-900 md:px-6 md:pb-24 md:pt-20">
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-brand-600 transition hover:text-brand-700"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition hover:underline"
         >
           <ArrowLeft className="h-4 w-4 shrink-0" aria-hidden />
           Natrag na blog
         </Link>
 
         <header className="mt-8 space-y-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-600">{post.category}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-600">{post.category}</p>
           <h1 id="post-title" className="font-heading text-4xl font-bold leading-tight md:text-5xl">
             {post.title}
           </h1>
           <p className="text-sm text-slate-600">
             {post.dateLabel} · {post.readTimeLabel}
           </p>
-          <p className="border-l-4 border-brand-400 pl-6 text-lg leading-relaxed text-slate-700 md:text-xl">{post.excerpt}</p>
+          <p className="border-l-4 border-slate-900/50 pl-6 text-lg leading-relaxed text-slate-700 md:text-xl">{post.excerpt}</p>
         </header>
 
         <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-soft">
@@ -67,7 +67,7 @@ export default async function BlogPostPage({ params }: { params: ParamsInput }) 
           <div className="mt-10 border-t border-slate-200 pt-6">
             <a
               href="/#kontakt"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-600 transition hover:text-brand-700"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition hover:underline"
             >
               Kontaktirajte nas
               <span aria-hidden>→</span>

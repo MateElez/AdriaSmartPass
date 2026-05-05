@@ -2,67 +2,67 @@
 export const BLOG_POSTS = [
   {
     slug: "odrzavanje-pametnih-brava-najcesci-problemi-i-rjesenja",
-    title: "Održavanje pametnih brava: najčešći problemi i rješenja",
+    title: "Održavanje video sustava: najčešći problemi i rješenja",
     category: "Tehnički vodiči",
-    imageSrc: "/images/blog/blog-odrzavanje-pametnih-brava.png",
-    imageAlt: "Pametna brava na vratima — održavanje i pouzdan rad",
+    imageSrc: "/images/placeholders/blog-security.svg",
+    imageAlt: "Servis video nadzora — pouzdan rad kamera i pohrane",
     excerpt:
-      "Saznajte koji se problemi najčešće javljaju kod pametnih brava i kako ih jednostavno otkloniti – od pražnjenja baterije do poteškoća u povezivanju.",
+      "CCTV optimization u praksi: od diskova i zagušenja mreže do noćne slike koja gubi oštrinu. Što provjeriti prije sezone da remote monitoring i snimanje budu pouzdani.",
     dateLabel: "10. veljače 2026.",
     readTimeLabel: "6 min čitanja"
   },
   {
     slug: "pametne-brave-u-airbnb-apartmanima",
-    title: "Pametne brave u Airbnb apartmanima",
+    title: "Video nadzor u vilama i apartmanima za kratkoročni najam",
     category: "Primjena u praksi",
-    imageSrc: "/images/blog/blog-airbnb-apartmani.png",
-    imageAlt: "Ulaz u apartman za kratkoročni najam s pametnom bravom",
+    imageSrc: "/images/placeholders/blog-security.svg",
+    imageAlt: "Eksterijer smještaja za najam s diskretnim video nadzorom",
     excerpt:
-      "Pogledajte kako pametne brave pojednostavljuju upravljanje Airbnb smještajem – omogućuju brži check-in, veću sigurnost i bolje iskustvo za goste.",
+      "Security system design za rentals: gdje staviti kamere, kako definirati zone i kako osigurati remote monitoring koji vlasnicima daje full property visibility bez invazivnog nadzora unutrašnjosti apartmana.",
     dateLabel: "5. veljače 2026.",
     readTimeLabel: "7 min čitanja"
   },
   {
     slug: "sigurnost-pametnih-brava-kljucne-informacije",
-    title: "Sigurnost pametnih brava: ključne informacije",
+    title: "Sigurnost i privatnost video nadzora: što morate znati",
     category: "Sigurnost",
-    imageSrc: "/images/blog/blog-sigurnost-pametnih-brava.png",
-    imageAlt: "Digitalna sigurnost i kontrola pristupa pametne brave",
+    imageSrc: "/images/placeholders/blog-security.svg",
+    imageAlt: "Zaštita podataka i pristup monitoring sustavu",
     excerpt:
-      "Detaljan pregled sigurnosnih aspekata pametnih brava – kako funkcionira enkripcija, kako se zaštititi od neovlaštenog pristupa i koje su preporučene sigurnosne mjere.",
+      "Property security i privatnost: enkripcija prijenosa, role-based pristupi, audit log i GDPR-aware postavljanje kamera — kako remote monitoring ostaje siguran i audit-friendly.",
     dateLabel: "30. siječnja 2026.",
     readTimeLabel: "6 min čitanja"
   },
   {
     slug: "pametne-brave-za-hotele-kako-odabrati-pravo-rjesenje",
-    title: "Pametne brave za hotele: kako odabrati pravo rješenje",
+    title: "Smart security za hotele: kako odabrati video i monitoring sustav",
     category: "Primjena u praksi",
-    imageSrc: "/images/blog/blog-hoteli-pametne-brave.png",
-    imageAlt: "Hotelski hodnik i elektronička brava na sobama",
+    imageSrc: "/images/placeholders/blog-security.svg",
+    imageAlt: "Hotelski zajednički prostor s profesionalnim nadzorom",
     excerpt:
-      "Sve što hoteli trebaju znati prije implementacije pametnih brava – prednosti, mogućnosti integracije i savjeti za uspješnu primjenu.",
+      "Security system design za hotelske operacije: 24/7 monitoring, workflow smjena i SLA za incident escalation. Ujednačen remote monitoring za recepciju, housekeeping i leadership timove.",
     dateLabel: "25. siječnja 2026.",
     readTimeLabel: "8 min čitanja"
   },
   {
     slug: "kako-izabrati-idealnu-pametnu-bravu-za-dom",
-    title: "Kako izabrati idealnu pametnu bravu za dom?",
+    title: "Kako odabrati video nadzor za luksuznu nekretninu?",
     category: "Vodiči",
-    imageSrc: "/images/blog/blog-pametna-brava-dom.png",
-    imageAlt: "Obiteljska kuća s pametnom bravom na ulaznim vratima",
+    imageSrc: "/images/placeholders/blog-security.svg",
+    imageAlt: "Vila s pažljivo postavljenim IP kamerama na perimetru",
     excerpt:
-      "Pregled najvažnijih kriterija pri kupnji pametne brave – vrste, funkcionalnosti, kompatibilnost i omjer cijene i kvalitete.",
+      "CCTV optimization za luksuzne nekretnine: raspored kamera, noćna izvedba (IR/WDR), PoE infrastruktura i politika čuvanja. Dizajn koji podržava security system decisions kroz remote monitoring.",
     dateLabel: "20. siječnja 2026.",
     readTimeLabel: "7 min čitanja"
   },
   {
     slug: "pametne-brave-sto-su-i-kako-rade",
-    title: "Pametne brave: što su i kako rade?",
+    title: "Što je moderan IP video nadzor i kako funkcionira?",
     category: "Edukacija",
-    imageSrc: "/images/blog/blog-sto-su-pametne-brave.png",
-    imageAlt: "Pregled dijelova pametne brave — kako radi",
+    imageSrc: "/images/placeholders/blog-security.svg",
+    imageAlt: "Pregled komponenti sustava video nadzora",
     excerpt:
-      "Upoznajte se s osnovama pametnih brava – tehnologija iza njih, način rada i razlozi zašto postaju standard u modernim objektima.",
+      "Security system design od kamere do NVR-a i oblaka: osnovni pojmovi, remote monitoring logika i što znači imati skalabilnu property security arhitekturu za više lokacija.",
     dateLabel: "15. siječnja 2026.",
     readTimeLabel: "5 min čitanja"
   }

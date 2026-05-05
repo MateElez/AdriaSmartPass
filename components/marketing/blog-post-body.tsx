@@ -15,7 +15,7 @@ const components: Components = {
   a: ({ href, children }) => (
     <a
       href={href}
-      className="font-semibold text-brand-600 underline-offset-2 transition hover:text-brand-700 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
+      className="font-semibold text-slate-900 underline-offset-2 transition hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2"
     >
       {children}
     </a>

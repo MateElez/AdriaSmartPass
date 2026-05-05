@@ -1,4 +1,4 @@
-# Adria SmartPass
+# Adria Security Systems
 
 Next.js marketing site with **email-only** contact lead capture (Resend). **No database.**
 

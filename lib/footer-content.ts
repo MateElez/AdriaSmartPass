@@ -1,6 +1,6 @@
 /** Kratki opis u podnožju */
 export const FOOTER_TAGLINE =
-  "Pametne brave i kontrola pristupa za apartmane, hotele i poslovne prostore u Hrvatskoj.";
+  "Premium video nadzor i smart security sustavi za vlasnike nekretnina, vile, najam i hotele — iz Hrvatske.";
 
 /**
  * Ostavi prazno ili postavi u .env: NEXT_PUBLIC_FOOTER_INSTAGRAM_URL, NEXT_PUBLIC_FOOTER_LINKEDIN_URL

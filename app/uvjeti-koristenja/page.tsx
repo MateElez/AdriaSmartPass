@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { SiteShell } from "@/components/layout/site-shell";
 
 export const metadata: Metadata = {
-  title: "Uvjeti korištenja | Adria SmartPass",
-  description: "Uvjeti korištenja web stranice Adria SmartPass."
+  title: "Uvjeti korištenja | Adria Security Systems",
+  description: "Uvjeti korištenja web stranice Adria Security Systems."
 };
 
 export default function TermsOfUsePage() {
@@ -26,7 +26,7 @@ export default function TermsOfUsePage() {
         <section className="mt-10">
           <h2 className="font-heading text-xl font-semibold text-slate-900">Promjene sadržaja</h2>
           <p className="mt-3 text-sm leading-relaxed text-slate-600">
-            Adria SmartPass zadržava pravo izmjene sadržaja, usluga i informacija na stranici u bilo kojem trenutku bez
+            Adria Security Systems zadržava pravo izmjene sadržaja, usluga i informacija na stranici u bilo kojem trenutku bez
             prethodne najave.
           </p>
         </section>

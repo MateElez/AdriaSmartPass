@@ -2,16 +2,15 @@
  * Tekstovi na gumbima koji vode na #kontakt — isti indeks kao ?cta= u URL-u.
  */
 export const KONTAKT_CTA_LABELS = [
-  "Provjeri rješenje za svoj objekt",
-  "Pošalji opis — dobit ćeš konkretan prijedlog",
-  "Saznaj što ima smisla za tvoja vrata",
-  "Provjeri rješenje za svoj objekt",
-  "Pošalji opis — dobit ćeš konkretan prijedlog"
+  "Zatražite security konzultacije",
+  "Pošaljite specifikaciju — pripremit ćemo tehnički prijedlog",
+  "Dogovorite procjenu lokacije za video nadzor",
+  "Zatražite security konzultacije",
+  "Pošaljite specifikaciju — pripremit ćemo tehnički prijedlog"
 ] as const;
 
 /** Naslov sekcije Kontakt kada nema valjanog ?cta= (početna). */
-export const KONTAKT_HOME_TITLE_FALLBACK =
-  "Pošalji opis — dobit ćeš konkretan prijedlog bez obaveze";
+export const KONTAKT_HOME_TITLE_FALLBACK = "Zatražite security konzultacije";
 
 function firstQueryValue(v: string | string[] | undefined): string | undefined {
   if (v === undefined) return undefined;

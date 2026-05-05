@@ -21,7 +21,7 @@ export function BlogCard({ title, category, imageSrc, imageAlt, excerpt, dateLab
       href={href}
       className={cn(
         MARKETING_CARD,
-        "group relative z-10 flex h-full cursor-pointer flex-col overflow-hidden p-4 no-underline outline-none ring-offset-slate-50 transition hover:-translate-y-0.5 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 active:scale-[0.99] touch-manipulation sm:p-5 md:p-6"
+        "group relative z-10 flex h-full cursor-pointer flex-col overflow-hidden p-4 no-underline outline-none ring-offset-slate-50 transition hover:-translate-y-0.5 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 active:scale-[0.99] touch-manipulation sm:p-5 md:p-6"
       )}
     >
       <div className="-mx-4 -mt-4 mb-4 overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50 sm:-mx-5 sm:-mt-5 sm:mb-5 md:-mx-6 md:-mt-6">
@@ -37,18 +37,18 @@ export function BlogCard({ title, category, imageSrc, imageAlt, excerpt, dateLab
         </div>
       </div>
       <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-600 sm:text-xs sm:tracking-[0.22em]">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600 sm:text-xs sm:tracking-[0.22em]">
           {category}
         </p>
         <p className="text-[11px] text-slate-500 sm:text-xs">{dateLabel} · {readTimeLabel}</p>
       </div>
 
-      <h3 className="mt-3 font-heading text-lg font-semibold leading-snug text-slate-900 group-hover:text-brand-800 sm:mt-4 sm:text-xl">
+      <h3 className="mt-3 font-heading text-lg font-semibold leading-snug text-slate-900 group-hover:text-slate-900 sm:mt-4 sm:text-xl">
         {title}
       </h3>
       <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">{excerpt}</p>
 
-      <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-600">
+      <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-900">
         Pročitaj više
         <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" aria-hidden />
       </span>

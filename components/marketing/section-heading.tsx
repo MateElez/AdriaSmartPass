@@ -11,7 +11,7 @@ export function SectionHeading({ eyebrow, title, description, className }: Secti
   return (
     <div className={cn("mx-auto min-w-0 max-w-3xl text-center", className)}>
       {eyebrow ? (
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-brand-600">{eyebrow}</p>
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">{eyebrow}</p>
       ) : null}
       <h2 className="text-balance break-words font-heading text-2xl font-bold leading-snug text-slate-900 sm:text-3xl md:text-4xl">
         {title}

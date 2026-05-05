@@ -30,12 +30,12 @@ export function SiteHeader() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-slate-300/70 bg-slate-50/80 backdrop-blur-xl">
       <div className="mx-auto flex min-h-[3.75rem] w-full max-w-7xl items-center justify-between gap-2 px-3 py-2 sm:min-h-16 sm:gap-3 sm:px-4 md:min-h-[4.25rem] md:gap-4 md:px-5 md:py-2.5 lg:px-6">
         <a
           href={homeSectionHref(pathname, "/#pocetna")}
-          className="flex shrink-0 items-center rounded-md transition hover:opacity-[0.92] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-          aria-label="Adria SmartPass — početna"
+          className="flex shrink-0 items-center rounded-md transition hover:opacity-[0.92] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50"
+          aria-label="Adria Security Systems — premium smart property security"
         >
           <LogoWordmark className="h-9 max-w-[min(82vw,22rem)] sm:h-10 sm:max-w-[min(78vw,26rem)] md:h-11 md:max-w-[min(52vw,28rem)] lg:h-12 lg:max-w-none xl:h-[3.25rem]" />
         </a>
@@ -49,7 +49,7 @@ export function SiteHeader() {
                 href={homeSectionHref(pathname, link.href)}
                 className={cn(
                   "whitespace-nowrap text-xs font-medium transition lg:text-sm",
-                  isActive ? "text-brand-600" : "text-slate-700 hover:text-brand-600"
+                  isActive ? "text-slate-900" : "text-slate-700 hover:text-slate-900"
                 )}
               >
                 {link.label}
@@ -61,7 +61,7 @@ export function SiteHeader() {
         <button
           type="button"
           onClick={() => setOpen((value) => !value)}
-          className="rounded-lg border border-slate-200 p-2.5 text-slate-700 touch-manipulation md:hidden"
+          className="rounded-lg border border-slate-300/70 bg-slate-50/60 p-2.5 text-slate-700 touch-manipulation md:hidden"
           aria-label={open ? "Zatvori navigaciju" : "Prikaži navigaciju"}
           aria-expanded={open}
         >
@@ -77,7 +77,7 @@ export function SiteHeader() {
             animate={reduceMotion ? { opacity: 1, height: "auto" } : { opacity: 1, height: "auto" }}
             exit={reduceMotion ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden border-t border-slate-200 bg-white md:hidden"
+            className="overflow-hidden border-t border-slate-300/70 bg-slate-50 md:hidden"
           >
             <div className="px-3 pb-[max(1rem,env(safe-area-inset-bottom))] pt-2 sm:px-4">
               <nav className="flex flex-col gap-1">
@@ -91,8 +91,8 @@ export function SiteHeader() {
                       className={cn(
                         "min-h-11 rounded-lg px-3 py-2.5 text-sm font-medium transition touch-manipulation",
                         isActive
-                          ? "bg-brand-50 text-brand-700"
-                          : "text-slate-700 hover:bg-slate-100 hover:text-brand-600"
+                          ? "bg-slate-200/60 text-slate-900"
+                          : "text-slate-700 hover:bg-slate-200/50 hover:text-slate-900"
                       )}
                     >
                       {link.label}

@@ -5,7 +5,7 @@ export function LogoWordmark({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 640 80"
+      viewBox="0 0 920 80"
       fill="none"
       className={cn("block w-auto max-w-full", className)}
       aria-hidden
@@ -18,13 +18,12 @@ export function LogoWordmark({ className }: { className?: string }) {
         y="56"
         style={{
           fontFamily: "var(--font-heading, 'Space Grotesk'), ui-sans-serif, system-ui, sans-serif",
-          fontSize: "46px",
+          fontSize: "44px",
           fontWeight: 700,
           letterSpacing: "-0.035em"
         }}
       >
-        <tspan fill="#0a2d2c">Adria </tspan>
-        <tspan fill="#226361">SmartPass</tspan>
+        <tspan fill="#0f172a">Adria Security Systems</tspan>
       </text>
     </svg>
   );

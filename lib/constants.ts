@@ -1,10 +1,10 @@
 import type { LeadStatusValue, ProjectTypeValue } from "@/types/enums";
 
 export const PROJECT_TYPE_OPTIONS: Array<{ value: ProjectTypeValue; label: string }> = [
-  { value: "APARTMENT", label: "Stan" },
-  { value: "AIRBNB", label: "Apartman" },
-  { value: "HOTEL", label: "Hotel" },
-  { value: "OFFICE", label: "Ured" },
+  { value: "APARTMENT", label: "Apartman / stan" },
+  { value: "AIRBNB", label: "Villa / kratkoročni najam" },
+  { value: "HOTEL", label: "Hotel ili boutique smještaj" },
+  { value: "OFFICE", label: "Poslovni prostor" },
   { value: "OTHER", label: "Ostalo" }
 ];
 
@@ -26,189 +26,199 @@ export const LEAD_STATUS_STYLES: Record<LeadStatusValue, string> = {
 
 export const SERVICE_ITEMS = [
   {
-    slug: "ugradnja-pametnih-brava",
-    title: "Ugradnja pametnih brava",
+    slug: "video-surveillance-systems",
+    title: "Video Surveillance Systems",
     description:
-      "Ugradnja rješenja za ulaz bez ključeva, prilagođena vašem objektu i načinu najma.",
+      "Premium sustavi video nadzora projektirani za sigurnost objekta i standarde hospitalityja.",
     details:
-      "Check-in bez čekanja: jasna pravila za goste, čistače i vlasnika te upute koje odmah koristite. Izvedba na lokaciji uglavnom stane u jedan dolazak.",
+      "Ne radimo „instalaciju”. Radimo sustav: dizajn pokrivenosti, izbor opreme i deployment koji daje jasnu sliku događaja — danju i noću, u sezoni i izvan nje.",
     includes: [
-      "Procjena vrata i navika korištenja (gosti, čistači, osoblje)",
-      "Ugradnja i testiranje pristupa na lokaciji",
-      "Postavljanje korisnika i kratka edukacija"
+      "Dizajn zona nadzora i matrica pokrivenosti (ulazi, perimetar, parking, zajednički prostori)",
+      "Deployment kamera + pohrane (NVR/hibrid) i kalibracija slike (WDR/IR/noć)",
+      "Predaja sustava s kontrolnom listom i obuka za ključne osobe"
     ],
-    imageSrc: "/images/service-ugradnja-pametnih-brava.png",
-    imageAlt: "Pametna brava na modernim vratima"
+    imageSrc: "/images/placeholders/service-security.svg",
+    imageAlt: "Profesionalna IP kamera na fasadi luksuznog smještaja"
   },
   {
-    slug: "sustavi-kontrole-pristupa",
-    title: "Sustavi kontrole pristupa",
+    slug: "remote-property-monitoring",
+    title: "Remote Property Monitoring",
     description:
-      "Pristup za više osoba i uloga — bez stalnog dijeljenja i skupljanja ključeva.",
+      "Real-time nadzor za vlasnike i operativu — jedna slika za jednu ili više lokacija.",
     details:
-      "Česte promjene korisnika bez kaosa koordinacije: prava po osobi i vremenu, vi zadržavate pregled.",
+      "Uspostavljamo remote monitoring koji skraćuje reakciju: live pogled, pametne obavijesti i uvid u događaje bez fizičkog odlaska na lokaciju.",
     includes: [
-      "Organizacija pristupa po ulogama i vremenu (gost/čistač/osoblje)",
-      "Jednostavno dodavanje i ukidanje pristupa bez fizičkih ključeva",
-      "Postavljanje pravila pristupa i upute za rad"
+      "Role-based uloge i pristupi (vlasnik, uprava, recepcija, tehničar)",
+      "Pravila obavijesti (zone, raspored, prioritet) i incident flow",
+      "Centralizirani pregled za više lokacija (dashboard, mobilni uvid)"
     ],
-    imageSrc: "/images/service-sustavi-kontrole-pristupa.png",
-    imageAlt: "Sustav pristupa s tipkovnicom i čitačem na ulazu"
+    imageSrc: "/images/placeholders/service-security.svg",
+    imageAlt: "Centralizirani monitoring na više ekrana u tehničkoj prostoriji"
   },
   {
-    slug: "retrofit-pametnih-cilindara",
-    title: "Retrofit pametnih cilindara",
+    slug: "perimeter-security-systems",
+    title: "Perimeter Security Systems",
     description:
-      "Nadogradnja postojećih vrata na pametan pristup, bez nepotrebnih zahvata.",
+      "Zaštita perimetra i kritičnih zona oko objekta — dizajniran sloj odvraćanja i detekcije.",
     details:
-      "Zadržite postojeća vrata — brz put do ulaza bez ključa, pouzdano u svakodnevici.",
+      "Perimetar je mjesto gdje incident počinje. Projektiramo sustav koji daje rani signal i pregled događaja: ulazi, ograda, parking, servisni prilazi.",
     includes: [
-      "Procjena kompatibilnosti i prijedlog rješenja",
-      "Ugradnja uz minimalne zahvate i urednu izvedbu",
-      "Provjera rada i upute za korištenje"
+      "Mapa perimetra i kritičnih točaka (prilazi, garaže, skladišta, zajedničke zone)",
+      "Scenariji detekcije i noćni rad (IR, WDR, osvjetljenje gdje ima smisla)",
+      "Deployment i testiranje na stvarnim scenarijima (lažno pozitivni vs. signal)"
     ],
-    imageSrc: "/images/service-retrofit-cilindara.png",
-    imageAlt: "Pametni cilindar na suvremenim vratima s diskretnim retro tonom"
+    imageSrc: "/images/placeholders/service-security.svg",
+    imageAlt: "Tehničar postavlja novu kameru uz postojeću infrastrukturu"
   },
   {
-    slug: "odrzavanje-i-podrska",
-    title: "Održavanje i podrška",
+    slug: "smart-security-integration",
+    title: "Smart Security Integration",
     description:
-      "Brza pomoć, promjene pristupa i miran rad sustava nakon ugradnje.",
+      "Future‑proof integracije: video nadzor kao jezgra, uz mogućnost proširenja na alarme i kontrolu pristupa.",
     details:
-      "Kad se najam mijenja: prilagodba korisnika i postavki te situacija na terenu — pristup ostaje pouzdan.",
+      "Dizajniramo sigurnosnu arhitekturu koja raste s vama. Integracije planiramo unaprijed, tako da novi slojevi ne ruše postojeći monitoring i operativu.",
     includes: [
-      "Promjene korisnika i pravila pristupa",
-      "Provjere, podešavanja i rješavanje problema",
-      "Podrška na daljinu ili na lokaciji po potrebi"
+      "Plan integracije (alarm, senzori, access control, smart locks) prema roadmapu",
+      "Uloge i pravila: tko vidi što i kada (audit-friendly postavke)",
+      "Dokumentacija sustava i standardizacija za portfelje"
     ],
-    imageSrc: "/images/service-odrzavanje-podrska.png",
-    imageAlt: "Tehničar prilagođava pametnu bravu na vratima na lokaciji"
+    imageSrc: "/images/placeholders/service-security.svg",
+    imageAlt: "Servis tehničara uz rack s NVR opremom"
   },
   {
-    slug: "sigurnosno-savjetovanje",
-    title: "Sigurnosno savjetovanje",
+    slug: "security-consultation-system-design",
+    title: "Security Consultation & System Design",
     description:
-      "Jasna preporuka prije ulaganja — što ima smisla za vaš objekt i način rada.",
+      "Procjena rizika, dizajn sustava i izvedbeni plan — pripremljeno za vlasnika, upravu i budžetiranje.",
     details:
-      "Prije ulaganja: konkretan prijedlog, plan izvedbe i logika pristupa jednostavna za održavanje.",
+      "Konzultacije su mjesto gdje se štedi najviše: definicija ciljeva, zona, privatnosti i CAPEX/OPEX-a prije deploymenta. Dobivate jasan blueprint za premium smart security.",
     includes: [
-      "Procjena objekta i scenarija korištenja (gosti, čistači, osoblje)",
-      "Prijedlog opreme i načina pristupa (što, gdje i zašto)",
-      "Plan koraka za ugradnju i postavljanje"
+      "Procjena objekta i operativnih scenarija (rental, hotel, poslovni timovi)",
+      "Blueprint topologije (kamere, pohrana, mreža, napajanje, redundantnost)",
+      "Plan faza deploymenta i okvir CAPEX/OPEX za donošenje odluke"
     ],
-    imageSrc: "/images/service-sigurnosno-savjetovanje.png",
-    imageAlt: "Tim uz stol pregledava planove i tehničku dokumentaciju za pristup"
+    imageSrc: "/images/placeholders/service-security.svg",
+    imageAlt: "Tim pregledava tlocrte objekta i zonu video nadzora"
   }
 ];
 
 export const PRODUCT_CATEGORIES = [
   {
-    title: "Pametne brave",
+    title: "IP kamere i video snimanje",
     description:
-      "Baterijski i žičani sustavi brava s udaljenim upravljanjem, pristupom za goste i evidencijom ulazaka.",
-    imageSrc: "/images/kategorije/kategorija-pametne-brave.png",
-    imageAlt: "Pametna brava na ulazu"
+      "Od diskretnih dome kamera do robustnih vanjskih snimanja — rezolucija, IR i smart security funkcije za property portfolio.",
+    imageSrc: "/images/placeholders/category-security.svg",
+    imageAlt: "IP sigurnosna kamera na ulazu nekretnine"
   },
   {
-    title: "Tipkovnice i čitači",
+    title: "NVR, pohrana i redundantnost",
     description:
-      "Sigurne PIN, RFID i višefaktorske kontrole pristupa za objekte s čestim promjenama korisnika i uredske ulaze.",
-    imageSrc: "/images/kategorije/kategorija-tipkovnice-citaci.png",
-    imageAlt: "Tipkovnica i RFID čitač za kontrolu pristupa"
+      "Lokalna i hibridna pohrana s politikom zadržavanja snimaka prilagođenom hotelima, vilama i najmu.",
+    imageSrc: "/images/placeholders/category-security.svg",
+    imageAlt: "Uređaji za pohranu video zapisa u tehničkom ormaru"
   },
   {
-    title: "Cilindri",
+    title: "Mreža, napajanje i infrastruktura",
     description:
-      "Pametni cilindri spremni za retrofit koji zadržavaju postojeća vrata uz modernu kontrolu pristupa.",
-    imageSrc: "/images/kategorije/kategorija-cilindri.png",
-    imageAlt: "Moderni pametni cilindar s LED indikatorom na suvremenim vratima"
+      "PoE switchevi, backbone i uvjeti za pouzdan video nadzor na lokacijama bez prekida u sezoni.",
+    imageSrc: "/images/placeholders/category-security.svg",
+    imageAlt: "Mrežna infrastruktura za sigurnosne sustave"
   },
   {
-    title: "Sustavi kontrole pristupa",
+    title: "Centralizirani monitoring i integracije",
     description:
-      "Centralizirani sustavi s skalabilnim dozvolama za upravljanje pristupom na više lokacija.",
-    imageSrc: "/images/kategorije/kategorija-kontrola-pristupa.png",
-    imageAlt: "Ulaz u objekt s PIN tipkovnicom i RFID čitačem u svakodnevnoj upotrebi"
+      "Dashboard za više lokacija, mobilni pregled i priključak na alarm ili facility workflow gdje je smisleno.",
+    imageSrc: "/images/placeholders/category-security.svg",
+    imageAlt: "Sučelje za monitoring više kamera i lokacija"
   }
 ];
 
 export const HOW_IT_WORKS_STEPS = [
   {
-    title: "Brza procjena",
-    description: "Pregledamo vrata i način rada u objektu te predložimo što ima smisla."
-  },
-  {
-    title: "Dogovor rješenja",
-    description: "Definiramo pristup za goste, čistače i vlasnika — jasno i bez improvizacije."
-  },
-  {
-    title: "Ugradnja",
+    title: "Security assessment",
     description:
-      "Konfiguriramo i testiramo sve na licu mjesta — tipično sve u jednom dolasku. Kad vrata dopuštaju, izbjegavamo bušenje kovine; ulaz može raditi i kad u tom trenutku nema mreže, ovisno o načinu pristupa koji odaberemo."
+      "Radimo security assessment nekretnine: mapiramo rizik po zoni, analiziramo vrijedne točke i scenarije incidenta (rental, hotel, poslovni prostori)."
   },
   {
-    title: "Postavljanje i podrška",
-    description: "Podesimo pravila pristupa, pokažemo korištenje i ostanemo dostupni za promjene."
+    title: "System design",
+    description:
+      "Definiramo sigurnosnu arhitekturu: preporučeni raspored kamera, monitoring plan, pohrana, pravila obavijesti i logika pregleda za tim."
+  },
+  {
+    title: "System deployment",
+    description:
+      "Premium deployment sustava: postavljanje i spajanje video infrastrukture, kalibracija slike te provjera snimanja i detekcije u realnim uvjetima."
+  },
+  {
+    title: "Setup & optimization",
+    description:
+      "Postavljamo monitoring pristup i optimiziramo tuning: role-based pregled, obavijesti po prioritetu i dorađivanje sustava dok radi stabilno — danju i noću."
   }
 ];
 
 /** Jedna brojka + konkretan ishod (sekcija Povjerenje). */
 export const SOCIAL_PROOF_MAIN_STAT = { label: "Instalirano u", value: "50+ objekata" } as const;
 
-export const SOCIAL_PROOF_OUTCOME = "Manje poziva i dogovaranja oko check-ina.";
+export const SOCIAL_PROOF_OUTCOME =
+  "Full property visibility, remote security control i 24/7 monitoring capability — manje incidenata i brži sigurnosni odgovor, dokumentiran snimkama.";
 
 export const TESTIMONIALS = [
   {
     quote:
-      "Imali smo 20+ check-inova tjedno — sada gotovo nula poziva oko ključa. Gosti znaju upute, a čistač ima svoj termin.",
-    attribution: "vlasnik apartmana, Zadar"
+      "U portfelju od šest vila konačno imamo jedinstven monitoring dashboard. Incident na bazenu riješimo brzim pregledom snimke i sigurnosnim uvidom, bez telefonskog maratona.",
+    attribution: "vlasnik portfelja najma, Zadar"
   },
   {
     quote:
-      "Airbnb gosti uđu sami, čistač dolazi u dogovoreno vrijeme. Više ne živim u porukama o ključu.",
-    attribution: "vlasnik Airbnb smještaja, Split"
+      "Boutique hotel — noćna smjena ima full property visibility na kritičnim zonama i opskrbnom hodniku u jednom sučelju. Osiguranje i tim za najam dobiju isti sigurnosni trag.",
+    attribution: "operations manager, Split"
   },
   {
-    quote: "Živim u inozemstvu — pristup za nove goste riješim u par minuta, bez nekoga tko predaje ključ.",
-    attribution: "vlasnik, udaljeno upravljanje"
+    quote:
+      "Živim u inozemstvu: remote security control i 24/7 monitoring capability za kritične zone — bez delegiranja provjere na lokaciju. Dobivam sigurnosni pregled i obavijesti odmah.",
+    attribution: "vlasnik vile, udaljeno upravljanje"
   }
 ] as const;
 
 export const FAQ_ITEMS = [
   {
-    question: "Što ako internet ne radi?",
+    question: "Kako funkcionira video nadzor sustav?",
     answer:
-      "Pristup se postavlja prema dogovoru (npr. kod ili kartica). Internet nije nužan za osnovni ulaz — gdje model dopušta, mogući su offline kodovi kad mreže nema."
+      "Kamere snimaju i šalju video preko mreže na pohranu (NVR, oblak ili hibrid). Monitoring platforma omogućuje live pregled, pregled snimaka po vremenu i događajima te upravljanje korisnicima i pravima pristupa."
   },
   {
-    question: "Koliko traje baterija u praksi?",
+    question: "Mogu li pratiti objekt na daljinu?",
     answer:
-      "Ovisno o modelu i broju ulazaka, često nekoliko mjeseci do godine ili više. Sustav na vrijeme upozori; zamjena je jednostavna."
+      "Da. Remote monitoring je standard: live pogled i pregled snimaka dostupni su na mobitelu i računalu, uz role-based pristupe (npr. vlasnik, uprava, recepcija, tehničar) i pravila obavijesti po zonama i prioritetu."
   },
   {
-    question: "Može li na postojeća vrata?",
+    question: "Koliko je siguran sustav nadzora?",
     answer:
-      "U većini slučajeva da. Na procjeni provjerimo vrata i cilindar te predložimo rješenje bez nepotrebnih zahvata."
+      "Sigurnost ovisi o dizajnu i postavkama: segmentirana mreža za video promet, jake lozinke i 2FA gdje je dostupno, minimalan broj admin računa te kontrola tko smije gledati ili izvoziti snimke. Sustav postavljamo tako da bude audit-friendly za operativu i vlasnike."
   },
   {
-    question: "Koliko traje ugradnja?",
+    question: "Koliko dugo se čuvaju snimke?",
     answer:
-      "Uobičajeno 1–2 sata u jednom terminu. Duljina ovisi o vratima i rješenju; cilj je završiti bez zastoja u najmu."
+      "Trajanje čuvanja definiramo prema vašem riziku i proceduri: od nekoliko dana do više tjedana ili mjeseci. U ponudi su jasno navedeni kapacitet, broj kanala, rezolucija i politika automatskog brisanja."
   },
   {
-    question: "Je li sigurno?",
+    question: "Što ako internet ili struja padnu?",
     answer:
-      "Da. Pristupi se mogu ograničiti po osobi i vremenu, a vi zadržavate kontrolu i mogućnost ukidanja kad god treba."
+      "Ovisno o arhitekturi. Lokalni NVR nastavlja snimati i bez interneta; za kritične lokacije preporučujemo UPS za pohranu i mrežnu opremu. Obavijesti i udaljeni pristup ovise o redundantnoj vezi (npr. backup internet) koju možemo planirati u dizajnu."
   },
   {
-    question: "Što ako gost ne zna koristiti?",
+    question: "Je li video nadzor u skladu s privatnošću?",
     answer:
-      "Upute šaljemo jasno i kratko (npr. u poruci za gosta). Možemo dogovoriti i jednostavan podsjetnik ili kratku pomoć — ako zapne, dostupni smo za brzu pomoć."
+      "Da, uz pravilno postavljanje. Radimo po načelu najmanjeg opsega: javne i servisne zone jasno označene, izbjegavanje privatnih prostora gostiju bez opravdanog interesa te jasna politika tko i kada pristupa snimkama."
   },
   {
-    question: "Može li se povezati s Booking ili Airbnb?",
+    question: "Tko sve može gledati snimke?",
     answer:
-      "Sustav rješava ulaz i pristup; rezervacije i kalendar i dalje idu kroz platformu koja vam odgovara. Povezivanje ovisi o odabranom modelu — na procjeni kažemo što je realno za vaš objekt."
+      "Samo korisnici koje vi odredite. Postavljamo role-based pristup (vlasnik, uprava, recepcija, facility/tehničar) i, gdje platforma podržava, audit log promjena i pregleda/izvoza snimki."
+  },
+  {
+    question: "Može li se sustav proširiti na alarm / access control?",
+    answer:
+      "Da. Video surveillance i monitoring mogu biti jezgra, a sustav se može širiti na alarmne senzore i access control prema roadmapu. Bitno je planirati topologiju (mreža, napajanje, pohrana) unaprijed kako bi proširenje bilo „plug-in”, a ne novi projekt."
   }
 ] as const;

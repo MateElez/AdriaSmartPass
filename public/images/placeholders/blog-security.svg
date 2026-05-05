@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#f8fafc"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1200 220) rotate(132) scale(560 420)">
+      <stop stop-color="#94a3b8" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#94a3b8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-40" y="-40" width="1680" height="980" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" rx="56" fill="url(#bg)"/>
+  <rect width="1600" height="900" rx="56" fill="url(#glow)"/>
+
+  <!-- subtle grid -->
+  <g opacity="0.10">
+    <path d="M160 120H1440" stroke="#e2e8f0" stroke-width="2"/>
+    <path d="M160 220H1440" stroke="#e2e8f0" stroke-width="2"/>
+    <path d="M160 320H1440" stroke="#e2e8f0" stroke-width="2"/>
+    <path d="M160 420H1440" stroke="#e2e8f0" stroke-width="2"/>
+    <path d="M160 520H1440" stroke="#e2e8f0" stroke-width="2"/>
+    <path d="M160 620H1440" stroke="#e2e8f0" stroke-width="2"/>
+    <path d="M160 720H1440" stroke="#e2e8f0" stroke-width="2"/>
+    <path d="M320 80V820" stroke="#e2e8f0" stroke-width="2"/>
+    <path d="M520 80V820" stroke="#e2e8f0" stroke-width="2"/>
+    <path d="M720 80V820" stroke="#e2e8f0" stroke-width="2"/>
+    <path d="M920 80V820" stroke="#e2e8f0" stroke-width="2"/>
+    <path d="M1120 80V820" stroke="#e2e8f0" stroke-width="2"/>
+    <path d="M1320 80V820" stroke="#e2e8f0" stroke-width="2"/>
+  </g>
+
+  <!-- camera glyph -->
+  <g transform="translate(220 240)">
+    <path d="M458 148c0 40-32 72-72 72H188c-40 0-72-32-72-72V92c0-40 32-72 72-72h198c40 0 72 32 72 72v56z" fill="#0b1220" opacity="0.65"/>
+    <path d="M340 68h68c24 0 44 20 44 44v16c0 24-20 44-44 44h-68" stroke="#e2e8f0" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="250" cy="120" r="56" fill="#0f172a"/>
+    <circle cx="250" cy="120" r="38" stroke="#e2e8f0" stroke-opacity="0.85" stroke-width="10"/>
+    <circle cx="250" cy="120" r="14" fill="#e2e8f0" opacity="0.85"/>
+    <path d="M96 92h96" stroke="#e2e8f0" stroke-opacity="0.6" stroke-width="10" stroke-linecap="round"/>
+    <path d="M96 148h76" stroke="#e2e8f0" stroke-opacity="0.45" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <!-- caption blocks -->
+  <g filter="url(#soft)" opacity="0.22">
+    <rect x="220" y="560" width="1160" height="14" rx="7" fill="#0f172a"/>
+    <rect x="220" y="600" width="920" height="14" rx="7" fill="#0f172a"/>
+    <rect x="220" y="640" width="740" height="14" rx="7" fill="#0f172a"/>
+  </g>
+</svg>

@@ -2,7 +2,7 @@ import { PROJECT_TYPE_OPTIONS } from "@/lib/constants";
 import { getResend } from "@/lib/resend-client";
 
 /** Verified production sender — must match Resend domain setup for `adriasmartpass.com`. */
-const RESEND_FROM = "Adria SmartPass <info@adriasmartpass.com>";
+const RESEND_FROM = "Adria Security Systems <info@adriasmartpass.com>";
 
 /** Minimal fields needed for outbound lead emails (contact intake payload). */
 export type LeadEmailPayload = {
@@ -100,10 +100,10 @@ export async function sendLeadSubmissionConfirmation(lead: LeadEmailPayload) {
   const html = `
     ${greetingParagraph}
     <p>hvala na upitu — zaprimili smo vašu poruku i javit ćemo se najkasnije unutar 24h s konkretnim prijedlogom.</p>
-    <p>Ako želite ubrzati proces, slobodno odgovorite na ovaj email s dodatnim informacijama (npr. slike vrata ili kratak opis objekta).</p>
+    <p>Ako želite ubrzati proces, slobodno odgovorite na ovaj email s dodatnim informacijama (npr. fotografije lokacije, tlocrte ili kratak opis zone nadzora).</p>
     <br/>
     <p>Lijep pozdrav,<br/>
-    Adria SmartPass</p>
+    Adria Security Systems</p>
   `;
 
   await resend.emails.send({

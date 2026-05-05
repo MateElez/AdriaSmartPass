@@ -14,7 +14,7 @@ export default function BlogIndexPage() {
         <SectionHeading
           eyebrow="Blog"
           title="Bilješke i vodiči"
-          description="Kratki tekstovi o odabiru, postavljanju i korištenju pametnih brava i kontrole pristupa."
+          description="Security expertise za nekretnine: CCTV optimization, remote monitoring i security system design za rentals i hotele."
         />
       </section>
 

@@ -26,7 +26,7 @@ export default function ErrorPage({
       </p>
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <Button onClick={reset}>Pokušaj ponovno</Button>
-        <Link href="/" className="text-sm font-semibold text-brand-600 transition hover:text-brand-700">
+        <Link href="/" className="text-sm font-semibold text-slate-900 transition hover:underline">
           Povratak na početnu
         </Link>
       </div>

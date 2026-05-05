@@ -115,7 +115,7 @@ export function ContactForm() {
         <label className="mb-1.5 block text-sm font-medium text-slate-700">Poruka *</label>
         <Textarea
           rows={6}
-          placeholder="Opišite svoj objekt i ciljeve kontrole pristupa."
+          placeholder="Opišite objekt (villa, hotel, najam…), željene zone video nadzora i postojeću mrežu ako je poznata."
           {...register("message")}
         />
         {errors.message ? <p className="mt-1 text-xs text-rose-600">{errors.message.message}</p> : null}

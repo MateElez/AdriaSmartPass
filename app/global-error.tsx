@@ -28,11 +28,11 @@ export default function GlobalError({
             <button
               type="button"
               onClick={() => reset()}
-              className="inline-flex h-10 items-center justify-center rounded-xl bg-brand-600 px-5 text-sm font-semibold text-white transition hover:bg-brand-700"
+              className="inline-flex h-10 items-center justify-center rounded-xl bg-slate-900 px-5 text-sm font-semibold text-white transition hover:bg-slate-800"
             >
               Pokušaj ponovno
             </button>
-            <Link href="/" className="text-sm font-semibold text-brand-600 hover:text-brand-700">
+            <Link href="/" className="text-sm font-semibold text-slate-900 hover:underline">
               Povratak na početnu
             </Link>
           </div>

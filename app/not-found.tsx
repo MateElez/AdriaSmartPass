@@ -11,10 +11,10 @@ export default function NotFoundPage() {
         Link koji ste otvorili ne postoji ili je premješten. Vratite se na početnu ili nas kontaktirajte.
       </p>
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-        <Link href="/" className="text-sm font-semibold text-brand-600 transition hover:text-brand-700">
+        <Link href="/" className="text-sm font-semibold text-slate-900 transition hover:underline">
           Povratak na početnu
         </Link>
-        <a href="/#kontakt" className="text-sm font-semibold text-brand-600 transition hover:text-brand-700">
+        <a href="/#kontakt" className="text-sm font-semibold text-slate-900 transition hover:underline">
           Kontakt
         </a>
       </div>

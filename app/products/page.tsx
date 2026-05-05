@@ -12,8 +12,8 @@ export default function ProductsPage() {
           <SectionHeading
             className={SECTION_HEADING_MARKETING}
             eyebrow="Proizvodi"
-            title="Kategorije opreme za kontrolu pristupa u modernim objektima"
-            description="Pristup temeljen na kategorijama kako biste odabrali pravi sustav neovisno o pojedinom brendu."
+            title="Kategorije opreme za video nadzor i monitoring sustave"
+            description="Strukturirani pregled komponenti smart security sustava — od kamere do pohrane i centraliziranog nadzora."
           />
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {PRODUCT_CATEGORIES.map((product) => (

@@ -7,7 +7,7 @@ import { CONTACT_EMAIL, CONTACT_PHONE_NUMBERS } from "@/lib/contact-info";
 import { resolveKontaktHeadingTitle } from "@/lib/kontakt-cta";
 import { cn } from "@/lib/utils";
 
-const CONTACT_PAGE_TITLE_FALLBACK = "Zatražite plan ugradnje";
+const CONTACT_PAGE_TITLE_FALLBACK = "Zatražite ponudu za video nadzor";
 
 export default function ContactPage({
   searchParams
@@ -22,7 +22,7 @@ export default function ContactPage({
         <SectionHeading
           eyebrow="Kontakt"
           title={headingTitle}
-          description="Opišite svoj objekt, a mi ćemo vam poslati prilagođenu ponudu i plan izvedbe."
+          description="Opišite nekretninu ili portfelj lokacija — poslat ćemo ponudu i tehnički koridor za smart security implementaciju."
         />
       </section>
 
@@ -32,7 +32,7 @@ export default function ContactPage({
           <p className="mt-1 min-w-0 break-words">
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="font-medium text-brand-700 underline-offset-2 hover:underline"
+              className="font-medium text-slate-900 underline-offset-2 hover:underline"
             >
               {CONTACT_EMAIL}
             </a>
@@ -40,7 +40,7 @@ export default function ContactPage({
           <ul className="mt-3 space-y-1.5">
             {CONTACT_PHONE_NUMBERS.map(({ href, label, contact }) => (
               <li key={href}>
-                <a href={href} className="font-medium text-brand-700 underline-offset-2 hover:underline">
+                <a href={href} className="font-medium text-slate-900 underline-offset-2 hover:underline">
                   {label}
                   <span className="font-normal text-slate-600"> — {contact}</span>
                 </a>

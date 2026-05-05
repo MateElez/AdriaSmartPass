@@ -14,8 +14,8 @@ export default function ServicesPage() {
       <section className="mx-auto w-full max-w-7xl px-4 pb-14 pt-14 md:px-6 md:pt-20">
         <SectionHeading
           eyebrow="Usluge"
-          title="Sigurnosne instalacije prilagođene operativnim timovima"
-          description="Od novih ugradnji do retrofit nadogradnji, svaku uslugu izvode certificirani tehničari."
+          title="Smart security instalacije za profesionalne portfelje nekretnina"
+          description="Od prvog dizajn radnog lista do održavanja monitoring sustava — timovi koji razumiju hotele, ville i sezonski najam."
         />
       </section>
 
@@ -34,7 +34,7 @@ export default function ServicesPage() {
 
       <AnimatedSection className="mx-auto w-full max-w-7xl px-4 pb-14 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-600">Detalji usluga</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-600">Detalji usluga</p>
           <h2 className="mt-3 font-heading text-3xl font-bold leading-tight text-slate-900 md:text-4xl">
             Što dobivate za svaku vrstu usluge
           </h2>
@@ -68,13 +68,13 @@ export default function ServicesPage() {
                   <p className="mt-3 text-sm text-slate-600">{service.details}</p>
 
                   <div className="mt-5">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-brand-600">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-600">
                       Najčešće uključuje
                     </p>
                     <ul className="mt-3 space-y-2 text-sm text-slate-700">
                       {service.includes.map((item) => (
                         <li key={item} className="flex items-start gap-2">
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-brand-600" />
+                          <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-slate-900" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -98,11 +98,11 @@ export default function ServicesPage() {
 
       <AnimatedSection className="mx-auto w-full max-w-7xl px-4 pb-14 md:px-6">
         <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-soft md:p-10">
-          <h2 className="font-heading text-3xl font-bold text-slate-900">Pristup implementaciji</h2>
+          <h2 className="font-heading text-3xl font-bold text-slate-900">Naš proces implementacije</h2>
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {HOW_IT_WORKS_STEPS.map((step, index) => (
               <div key={step.title} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <p className="text-xs font-semibold uppercase tracking-wider text-brand-600">
+                <p className="text-xs font-semibold uppercase tracking-wider text-slate-600">
                   Faza {index + 1}
                 </p>
                 <h3 className="mt-2 font-heading text-lg font-semibold text-slate-900">{step.title}</h3>
@@ -114,12 +114,12 @@ export default function ServicesPage() {
       </AnimatedSection>
 
       <AnimatedSection className="mx-auto w-full max-w-7xl px-4 pb-16 md:px-6">
-        <div className="rounded-3xl border border-brand-100 bg-brand-50 p-8 md:p-10">
-          <h3 className="font-heading text-2xl font-bold text-brand-900">
+        <div className="rounded-3xl border border-slate-300/70 bg-slate-50/70 p-8 md:p-10">
+          <h3 className="font-heading text-2xl font-bold text-slate-900">
             Trebate prilagođeni plan implementacije za svoj objekt?
           </h3>
-          <p className="mt-3 max-w-2xl text-sm text-brand-800 md:text-base">
-            Pošaljite broj vrata, zahtjeve pristupa i željeni rok. Pripremit ćemo praktičan plan
+          <p className="mt-3 max-w-2xl text-sm text-slate-700 md:text-base">
+            Pošaljite tlocrte ili fotografije lokacije, željene zone nadzora i željeni rok. Pripremit ćemo praktičan plan
             ugradnje i ponudu.
           </p>
           <Link href="/contact" className="mt-6 inline-block">

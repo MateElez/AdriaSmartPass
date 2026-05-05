@@ -2,7 +2,7 @@
 
 Email-only contact flow (`POST /api/contact` → Resend). **No database.**
 
-The sender address is fixed in application code: **`Adria SmartPass <info@adriasmartpass.com>`** (domain must be verified in Resend).
+The sender address is fixed in application code: **`Adria Security Systems <info@adriasmartpass.com>`** (domain must be verified in Resend).
 
 ## Required environment variables (production)
 
