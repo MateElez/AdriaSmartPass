@@ -60,7 +60,7 @@ export default function PrivacyPage() {
             Za sva pitanja vezana uz privatnost podataka možete nas kontaktirati na:{" "}
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="font-medium text-slate-900 underline underline-offset-4 transition hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2"
+              className="font-medium text-black underline underline-offset-4 visited:text-black hover:text-black hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2"
             >
               {CONTACT_EMAIL}
             </a>

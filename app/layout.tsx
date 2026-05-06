@@ -1,18 +1,11 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { Space_Grotesk } from "next/font/google";
 import { ToastProvider } from "@/components/providers/toast-provider";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin", "latin-ext"],
-  weight: ["600", "700"],
-  variable: "--font-heading-loaded",
-  display: "swap"
-});
+import { fontBody, fontHeading } from "@/lib/fonts";
 
 export const metadata: Metadata = {
-  title: "Adria Security Systems | Premium video nadzor i smart security za nekretnine",
+  title: "Adria Security Systems | Sustavi video nadzora za nekretnine",
   description:
     "Adria Security Systems — premium smart property security company. Projektiranje i ugradnja video nadzora i monitoring sustava za vile, kratkoročni najam, hotele i poslovne portfelje u Hrvatskoj."
 };
@@ -20,13 +13,13 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#e2e8f0"
+  themeColor: "#ffffff"
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="hr" className={spaceGrotesk.variable}>
-      <body className="antialiased">
+    <html lang="hr" className={`${fontHeading.variable} ${fontBody.variable}`}>
+      <body className={`${fontBody.className} min-h-screen bg-white text-slate-950 antialiased`}>
         <ToastProvider>{children}</ToastProvider>
       </body>
     </html>

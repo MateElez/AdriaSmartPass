@@ -11,28 +11,33 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          50: "#f4f8f8",
-          100: "#d6e8e7",
-          200: "#add0ce",
-          300: "#84b8b5",
-          400: "#5ba09d",
-          500: "#2f7f7d",
-          600: "#226361",
-          700: "#164746",
-          800: "#0a2d2c",
-          900: "#041516"
+          50: "#eef4ff",
+          100: "#dbe7ff",
+          200: "#b8ceff",
+          300: "#8fb0ff",
+          400: "#5f87ff",
+          500: "#1557ff",
+          600: "#1450e8",
+          700: "#113fbd",
+          800: "#0f3498",
+          900: "#0d2a7a"
         },
         accent: {
           500: "#f59e0b",
           600: "#d97706"
+        },
+        ink: {
+          950: "#030712",
+          900: "#05070d"
         }
       },
       boxShadow: {
-        soft: "0 8px 30px rgba(2, 12, 27, 0.08)"
+        soft: "0 8px 30px rgba(2, 12, 27, 0.08)",
+        subtle: "0 1px 2px rgba(2, 12, 27, 0.06)"
       },
       backgroundImage: {
-        "hero-grid":
-          "radial-gradient(circle at top right, rgba(148,163,184,0.55), transparent 55%), radial-gradient(circle at bottom left, rgba(226,232,240,0.9), transparent 48%)"
+        "hero-glow":
+          "radial-gradient(600px circle at 75% 30%, rgba(21,87,255,0.16), transparent 55%), radial-gradient(500px circle at 20% 20%, rgba(21,87,255,0.08), transparent 55%)"
       }
     }
   },

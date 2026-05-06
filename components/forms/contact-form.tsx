@@ -11,6 +11,7 @@ import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { MARKETING_SURFACE } from "@/components/marketing/section-panel";
 import { PROJECT_TYPE_OPTIONS } from "@/lib/constants";
+import { KONTAKT_PRIMARY_BUTTON_LABEL } from "@/lib/kontakt-cta";
 import { cn } from "@/lib/utils";
 import { createLeadSchema, type CreateLeadInput } from "@/lib/schemas/lead";
 
@@ -26,7 +27,7 @@ const defaultValues: CreateLeadInput = {
 
 const SUBMIT_ERROR_MESSAGE = "Došlo je do greške. Pokušajte ponovno.";
 
-export function ContactForm() {
+export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
   const router = useRouter();
   const [submitError, setSubmitError] = useState<string | null>(null);
   const form = useForm<CreateLeadInput>({
@@ -63,68 +64,141 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className={cn(MARKETING_SURFACE, "min-w-0 space-y-5 p-5 md:p-8")}
+      className={cn(
+        tone === "dark"
+          ? "min-w-0 space-y-5 rounded-3xl border border-slate-600/45 bg-slate-700/20 p-5 shadow-subtle backdrop-blur-sm md:p-8"
+          : cn(MARKETING_SURFACE, "min-w-0 space-y-5 p-5 md:p-8")
+      )}
     >
       {submitError ? (
-        <p className="rounded-lg border border-rose-200 bg-rose-50 px-3 py-2.5 text-sm text-rose-800" role="alert">
+        <p
+          className={cn(
+            "rounded-lg px-3 py-2.5 text-sm",
+            tone === "dark"
+              ? "border border-rose-400/25 bg-rose-950/30 text-rose-200"
+              : "border border-rose-200 bg-rose-50 text-rose-800"
+          )}
+          role="alert"
+        >
           {submitError}
         </p>
       ) : null}
 
+      <p className={cn("text-base font-semibold", tone === "dark" ? "text-slate-100" : "text-slate-950")}>Pošaljite upit</p>
+
       <div className="grid gap-5 md:grid-cols-2">
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-slate-700">Ime i prezime *</label>
-          <Input placeholder="Ivan Horvat" {...register("fullName")} />
-          {errors.fullName ? <p className="mt-1 text-xs text-rose-600">{errors.fullName.message}</p> : null}
+          <label className={cn("mb-1.5 block text-sm font-medium", tone === "dark" ? "text-slate-300" : "text-slate-700")}>
+            Ime i prezime *
+          </label>
+          <Input
+            placeholder="Ime i prezime"
+            className={cn(
+              tone === "dark" &&
+                "border-slate-600/55 bg-slate-900/25 text-slate-100 placeholder:text-slate-500 focus:border-brand-400 focus:ring-brand-500/15"
+            )}
+            {...register("fullName")}
+          />
+          {errors.fullName ? (
+            <p className={cn("mt-1 text-xs", tone === "dark" ? "text-rose-400" : "text-rose-600")}>{errors.fullName.message}</p>
+          ) : null}
         </div>
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-slate-700">E-mail *</label>
-          <Input type="email" placeholder="ime@tvrtka.com" {...register("email")} />
-          {errors.email ? <p className="mt-1 text-xs text-rose-600">{errors.email.message}</p> : null}
+          <label className={cn("mb-1.5 block text-sm font-medium", tone === "dark" ? "text-slate-300" : "text-slate-700")}>
+            E-mail *
+          </label>
+          <Input
+            type="email"
+            placeholder="email@primjer.hr"
+            className={cn(
+              tone === "dark" &&
+                "border-slate-600/55 bg-slate-900/25 text-slate-100 placeholder:text-slate-500 focus:border-brand-400 focus:ring-brand-500/15"
+            )}
+            {...register("email")}
+          />
+          {errors.email ? (
+            <p className={cn("mt-1 text-xs", tone === "dark" ? "text-rose-400" : "text-rose-600")}>{errors.email.message}</p>
+          ) : null}
         </div>
       </div>
 
       <div className="grid gap-5 md:grid-cols-2">
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-slate-700">Telefon *</label>
-          <Input placeholder="+385 95 5753959" {...register("phone")} />
-          {errors.phone ? <p className="mt-1 text-xs text-rose-600">{errors.phone.message}</p> : null}
+          <label className={cn("mb-1.5 block text-sm font-medium", tone === "dark" ? "text-slate-300" : "text-slate-700")}>
+            Telefon *
+          </label>
+          <Input
+            placeholder="+385 XXX XXXX"
+            className={cn(
+              tone === "dark" &&
+                "border-slate-600/55 bg-slate-900/25 text-slate-100 placeholder:text-slate-500 focus:border-brand-400 focus:ring-brand-500/15"
+            )}
+            {...register("phone")}
+          />
+          {errors.phone ? (
+            <p className={cn("mt-1 text-xs", tone === "dark" ? "text-rose-400" : "text-rose-600")}>{errors.phone.message}</p>
+          ) : null}
         </div>
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-slate-700">Tvrtka</label>
-          <Input placeholder="Neobavezno" {...register("company")} />
-          {errors.company ? <p className="mt-1 text-xs text-rose-600">{errors.company.message}</p> : null}
+          <label className={cn("mb-1.5 block text-sm font-medium", tone === "dark" ? "text-slate-300" : "text-slate-700")}>
+            Tvrtka / objekt
+          </label>
+          <Input
+            placeholder="Naziv tvrtke ili objekta (neobavezno)"
+            className={cn(
+              tone === "dark" &&
+                "border-slate-600/55 bg-slate-900/25 text-slate-100 placeholder:text-slate-500 focus:border-brand-400 focus:ring-brand-500/15"
+            )}
+            {...register("company")}
+          />
+          {errors.company ? (
+            <p className={cn("mt-1 text-xs", tone === "dark" ? "text-rose-400" : "text-rose-600")}>{errors.company.message}</p>
+          ) : null}
         </div>
       </div>
 
       <div>
-        <label className="mb-1.5 block text-sm font-medium text-slate-700">Vrsta projekta *</label>
+        <label className={cn("mb-1.5 block text-sm font-medium", tone === "dark" ? "text-slate-300" : "text-slate-700")}>
+          Vrsta projekta (vila / apartman / hotel / poslovni prostor) *
+        </label>
         <Select
           options={PROJECT_TYPE_OPTIONS.map((option) => ({
             value: option.value,
             label: option.label
           }))}
+          className={cn(
+            tone === "dark" &&
+              "border-slate-600/55 bg-slate-900/25 text-slate-100 focus:border-brand-400 focus:ring-brand-500/15 [&>option]:bg-white [&>option]:text-slate-900"
+          )}
           {...register("projectType")}
         />
         {errors.projectType ? (
-          <p className="mt-1 text-xs text-rose-600">{errors.projectType.message}</p>
+          <p className={cn("mt-1 text-xs", tone === "dark" ? "text-rose-400" : "text-rose-600")}>{errors.projectType.message}</p>
         ) : null}
       </div>
 
       <div>
-        <label className="mb-1.5 block text-sm font-medium text-slate-700">Poruka *</label>
+        <label className={cn("mb-1.5 block text-sm font-medium", tone === "dark" ? "text-slate-300" : "text-slate-700")}>
+          Poruka *
+        </label>
         <Textarea
           rows={6}
-          placeholder="Opišite objekt (villa, hotel, najam…), željene zone video nadzora i postojeću mrežu ako je poznata."
+          placeholder="Kratko opišite objekt, način korištenja i što želite postići video nadzorom."
+          className={cn(
+            tone === "dark" &&
+              "border-slate-600/55 bg-slate-900/25 text-slate-100 placeholder:text-slate-500 focus:border-brand-400 focus:ring-brand-500/15"
+          )}
           {...register("message")}
         />
-        {errors.message ? <p className="mt-1 text-xs text-rose-600">{errors.message.message}</p> : null}
+        {errors.message ? (
+          <p className={cn("mt-1 text-xs", tone === "dark" ? "text-rose-400" : "text-rose-600")}>{errors.message.message}</p>
+        ) : null}
       </div>
 
       <Button
         type="submit"
         size="lg"
-        className="h-12 w-full touch-manipulation sm:h-11 md:w-auto"
+        className={cn("h-12 w-full touch-manipulation sm:h-11 md:w-auto", tone === "dark" && "shadow-soft")}
         disabled={isSubmitting}
       >
         {isSubmitting ? (
@@ -133,7 +207,7 @@ export function ContactForm() {
             Šaljem...
           </>
         ) : (
-          "Pošalji upit"
+          KONTAKT_PRIMARY_BUTTON_LABEL
         )}
       </Button>
     </form>

@@ -1,70 +1,59 @@
 /** Metapodaci za kartice i liste — bez punog teksta članka (učitava se zasebno na stranici članka). */
 export const BLOG_POSTS = [
   {
-    slug: "odrzavanje-pametnih-brava-najcesci-problemi-i-rjesenja",
-    title: "Održavanje video sustava: najčešći problemi i rješenja",
-    category: "Tehnički vodiči",
-    imageSrc: "/images/placeholders/blog-security.svg",
-    imageAlt: "Servis video nadzora — pouzdan rad kamera i pohrane",
-    excerpt:
-      "CCTV optimization u praksi: od diskova i zagušenja mreže do noćne slike koja gubi oštrinu. Što provjeriti prije sezone da remote monitoring i snimanje budu pouzdani.",
-    dateLabel: "10. veljače 2026.",
-    readTimeLabel: "6 min čitanja"
-  },
-  {
-    slug: "pametne-brave-u-airbnb-apartmanima",
-    title: "Video nadzor u vilama i apartmanima za kratkoročni najam",
+    slug: "gdje-postaviti-kamere-vila-apartman-smislen-nadzor",
+    title: "Gdje postaviti kamere u vili ili apartmanu za smislen nadzor?",
     category: "Primjena u praksi",
     imageSrc: "/images/placeholders/blog-security.svg",
-    imageAlt: "Eksterijer smještaja za najam s diskretnim video nadzorom",
+    imageAlt: "Video nadzor vile ili apartmana — smisleno postavljene zone",
     excerpt:
-      "Security system design za rentals: gdje staviti kamere, kako definirati zone i kako osigurati remote monitoring koji vlasnicima daje full property visibility bez invazivnog nadzora unutrašnjosti apartmana.",
+      "Pametno postavljen video nadzor daje pregled nad objektom bez osjećaja pretjeranog nadzora i bez narušavanja privatnosti gostiju.",
     dateLabel: "5. veljače 2026.",
     readTimeLabel: "7 min čitanja"
   },
   {
-    slug: "sigurnost-pametnih-brava-kljucne-informacije",
-    title: "Sigurnost i privatnost video nadzora: što morate znati",
+    slug: "kako-pripremiti-video-nadzor-sezona-promet-gostiju",
+    title: "Kako pripremiti video nadzor za sezonu i veći promet gostiju",
+    category: "Tehnički vodiči",
+    imageSrc: "/images/placeholders/blog-security.svg",
+    imageAlt: "Priprema video nadzora prije sezone — pohrana i mreža",
+    excerpt:
+      "Prije početka sezone vrijedi provjeriti radi li sustav stabilno — posebno pohrana, mreža i noćna slika.",
+    dateLabel: "10. veljače 2026.",
+    readTimeLabel: "6 min čitanja"
+  },
+  {
+    slug: "tko-smije-gledati-snimke-nadzor-privatnost",
+    title: "Tko smije gledati snimke i kako postaviti nadzor bez narušavanja privatnosti?",
     category: "Sigurnost",
     imageSrc: "/images/placeholders/blog-security.svg",
-    imageAlt: "Zaštita podataka i pristup monitoring sustavu",
+    imageAlt: "Pravila pristupa snimkama i privatnost u video nadzoru",
     excerpt:
-      "Property security i privatnost: enkripcija prijenosa, role-based pristupi, audit log i GDPR-aware postavljanje kamera — kako remote monitoring ostaje siguran i audit-friendly.",
+      "Dobar video nadzor ne znači nadzirati sve. Najvažnije je jasno definirati tko ima pristup sustavu i koje zone stvarno imaju smisla pratiti.",
     dateLabel: "30. siječnja 2026.",
     readTimeLabel: "6 min čitanja"
   },
   {
-    slug: "pametne-brave-za-hotele-kako-odabrati-pravo-rjesenje",
-    title: "Smart security za hotele: kako odabrati video i monitoring sustav",
-    category: "Primjena u praksi",
-    imageSrc: "/images/placeholders/blog-security.svg",
-    imageAlt: "Hotelski zajednički prostor s profesionalnim nadzorom",
-    excerpt:
-      "Security system design za hotelske operacije: 24/7 monitoring, workflow smjena i SLA za incident escalation. Ujednačen remote monitoring za recepciju, housekeeping i leadership timove.",
-    dateLabel: "25. siječnja 2026.",
-    readTimeLabel: "8 min čitanja"
-  },
-  {
-    slug: "kako-izabrati-idealnu-pametnu-bravu-za-dom",
-    title: "Kako odabrati video nadzor za luksuznu nekretninu?",
-    category: "Vodiči",
-    imageSrc: "/images/placeholders/blog-security.svg",
-    imageAlt: "Vila s pažljivo postavljenim IP kamerama na perimetru",
-    excerpt:
-      "CCTV optimization za luksuzne nekretnine: raspored kamera, noćna izvedba (IR/WDR), PoE infrastruktura i politika čuvanja. Dizajn koji podržava security system decisions kroz remote monitoring.",
-    dateLabel: "20. siječnja 2026.",
-    readTimeLabel: "7 min čitanja"
-  },
-  {
-    slug: "pametne-brave-sto-su-i-kako-rade",
-    title: "Što je moderan IP video nadzor i kako funkcionira?",
+    slug: "moderan-video-nadzor-vs-obicne-kamere",
+    title: "Što danas razlikuje moderan video nadzor od „običnih kamera”?",
     category: "Edukacija",
     imageSrc: "/images/placeholders/blog-security.svg",
-    imageAlt: "Pregled komponenti sustava video nadzora",
+    imageAlt: "Moderni sustav video nadzora i mobilni pregled",
     excerpt:
-      "Security system design od kamere do NVR-a i oblaka: osnovni pojmovi, remote monitoring logika i što znači imati skalabilnu property security arhitekturu za više lokacija.",
+      "Moderni video nadzor više nije samo snimanje slike. Razlika je u preglednosti, stabilnosti sustava i mogućnosti upravljanja objektom na daljinu.",
     dateLabel: "15. siječnja 2026.",
     readTimeLabel: "5 min čitanja"
+  },
+  {
+    slug: "sto-hotel-treba-video-nadzora-visak",
+    title: "Što hotel zapravo treba od video nadzora — a što je višak?",
+    category: "Primjena u praksi",
+    imageSrc: "/images/placeholders/blog-security.svg",
+    imageAlt: "Hotelski video nadzor i operativa",
+    excerpt:
+      "Dobar hotelski video nadzor ne znači više kamera. Važnije je da sustav pomaže operativi i daje jasan pregled ključnih situacija.",
+    dateLabel: "25. siječnja 2026.",
+    readTimeLabel: "8 min čitanja"
   }
 ] as const;
 

@@ -65,7 +65,8 @@ export default function ServicesPage() {
 
                 <div>
                   <h3 className="font-heading text-2xl font-semibold text-slate-900">{service.title}</h3>
-                  <p className="mt-3 text-sm text-slate-600">{service.details}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">{service.description}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{service.details}</p>
 
                   <div className="mt-5">
                     <p className="text-xs font-semibold uppercase tracking-wider text-slate-600">

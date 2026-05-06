@@ -1,6 +1,6 @@
 /** Kratki opis u podnožju */
 export const FOOTER_TAGLINE =
-  "Premium video nadzor i smart security sustavi za vlasnike nekretnina, vile, najam i hotele — iz Hrvatske.";
+  "Sustavi video nadzora za vlasnike nekretnina, vile, najam i hotele.";
 
 /**
  * Ostavi prazno ili postavi u .env: NEXT_PUBLIC_FOOTER_INSTAGRAM_URL, NEXT_PUBLIC_FOOTER_LINKEDIN_URL

@@ -1,16 +1,19 @@
 /**
- * Tekstovi na gumbima koji vode na #kontakt — isti indeks kao ?cta= u URL-u.
+ * Tekstovi za naslove vezane uz kontakt (?cta= indeks).
  */
 export const KONTAKT_CTA_LABELS = [
-  "Zatražite security konzultacije",
-  "Pošaljite specifikaciju — pripremit ćemo tehnički prijedlog",
-  "Dogovorite procjenu lokacije za video nadzor",
-  "Zatražite security konzultacije",
-  "Pošaljite specifikaciju — pripremit ćemo tehnički prijedlog"
+  "Sigurnosni pregled vašeg objekta",
+  "Sigurnosni pregled vašeg objekta",
+  "Sigurnosni pregled vašeg objekta",
+  "Sigurnosni pregled vašeg objekta",
+  "Sigurnosni pregled vašeg objekta"
 ] as const;
 
-/** Naslov sekcije Kontakt kada nema valjanog ?cta= (početna). */
-export const KONTAKT_HOME_TITLE_FALLBACK = "Zatražite security konzultacije";
+/** Naslov sekcije na /contact kada nema valjanog ?cta=. */
+export const KONTAKT_HOME_TITLE_FALLBACK = "Sigurnosni pregled vašeg objekta";
+
+/** Primarni gumb (hero, header, forma). */
+export const KONTAKT_PRIMARY_BUTTON_LABEL = "Zatražite konzultacije";
 
 function firstQueryValue(v: string | string[] | undefined): string | undefined {
   if (v === undefined) return undefined;
@@ -29,8 +32,3 @@ export function resolveKontaktHeadingTitle(
   return KONTAKT_CTA_LABELS[n];
 }
 
-/** Poveznica na kontakt blok na početnoj: /?cta=indeks#kontakt */
-export function homeKontaktHref(ctaIndex: number): string {
-  const i = ((ctaIndex % KONTAKT_CTA_LABELS.length) + KONTAKT_CTA_LABELS.length) % KONTAKT_CTA_LABELS.length;
-  return `/?cta=${i}#kontakt`;
-}

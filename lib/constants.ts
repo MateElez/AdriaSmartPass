@@ -1,9 +1,9 @@
 import type { LeadStatusValue, ProjectTypeValue } from "@/types/enums";
 
 export const PROJECT_TYPE_OPTIONS: Array<{ value: ProjectTypeValue; label: string }> = [
-  { value: "APARTMENT", label: "Apartman / stan" },
-  { value: "AIRBNB", label: "Villa / kratkoročni najam" },
-  { value: "HOTEL", label: "Hotel ili boutique smještaj" },
+  { value: "APARTMENT", label: "Apartman" },
+  { value: "AIRBNB", label: "Vila" },
+  { value: "HOTEL", label: "Hotel" },
   { value: "OFFICE", label: "Poslovni prostor" },
   { value: "OTHER", label: "Ostalo" }
 ];
@@ -27,75 +27,73 @@ export const LEAD_STATUS_STYLES: Record<LeadStatusValue, string> = {
 export const SERVICE_ITEMS = [
   {
     slug: "video-surveillance-systems",
-    title: "Video Surveillance Systems",
+    title: "Video nadzor",
     description:
-      "Premium sustavi video nadzora projektirani za sigurnost objekta i standarde hospitalityja.",
+      "Projektiranje i ugradnja video nadzora za jasan pregled i pouzdan zapis događaja.",
     details:
-      "Ne radimo „instalaciju”. Radimo sustav: dizajn pokrivenosti, izbor opreme i deployment koji daje jasnu sliku događaja — danju i noću, u sezoni i izvan nje.",
+      "Sustav planiramo prema rasporedu objekta, ključnim zonama i uvjetima rada danju i noću.",
     includes: [
-      "Dizajn zona nadzora i matrica pokrivenosti (ulazi, perimetar, parking, zajednički prostori)",
-      "Deployment kamera + pohrane (NVR/hibrid) i kalibracija slike (WDR/IR/noć)",
-      "Predaja sustava s kontrolnom listom i obuka za ključne osobe"
+      "Plan pokrivenosti ulaza, perimetra i zajedničkih zona",
+      "Ugradnju kamera, pohrane i konfiguraciju sustava",
+      "Testiranje, predaju i osnovnu obuku korisnika"
     ],
     imageSrc: "/images/placeholders/service-security.svg",
     imageAlt: "Profesionalna IP kamera na fasadi luksuznog smještaja"
   },
   {
     slug: "remote-property-monitoring",
-    title: "Remote Property Monitoring",
+    title: "Udaljeni nadzor objekta",
     description:
-      "Real-time nadzor za vlasnike i operativu — jedna slika za jednu ili više lokacija.",
+      "Udaljeni nadzor objekta s live pregledom i pristupom s bilo koje lokacije.",
     details:
-      "Uspostavljamo remote monitoring koji skraćuje reakciju: live pogled, pametne obavijesti i uvid u događaje bez fizičkog odlaska na lokaciju.",
+      "Idealan za vlasnike i operativu koji ne mogu uvijek biti fizički prisutni.",
     includes: [
-      "Role-based uloge i pristupi (vlasnik, uprava, recepcija, tehničar)",
-      "Pravila obavijesti (zone, raspored, prioritet) i incident flow",
-      "Centralizirani pregled za više lokacija (dashboard, mobilni uvid)"
+      "Mobilni i desktop pristup sustavu",
+      "Obavijesti i upozorenja za odabrane zone",
+      "Centralni pregled jedne ili više lokacija"
     ],
     imageSrc: "/images/placeholders/service-security.svg",
     imageAlt: "Centralizirani monitoring na više ekrana u tehničkoj prostoriji"
   },
   {
     slug: "perimeter-security-systems",
-    title: "Perimeter Security Systems",
-    description:
-      "Zaštita perimetra i kritičnih zona oko objekta — dizajniran sloj odvraćanja i detekcije.",
+    title: "Zaštita perimetra",
+    description: "Zaštita ključnih vanjskih zona, prilaza i ulaza u objekt.",
     details:
-      "Perimetar je mjesto gdje incident počinje. Projektiramo sustav koji daje rani signal i pregled događaja: ulazi, ograda, parking, servisni prilazi.",
+      "Sustav planiramo tako da pruža jasan pregled kritičnih točaka tijekom dana i noći.",
     includes: [
-      "Mapa perimetra i kritičnih točaka (prilazi, garaže, skladišta, zajedničke zone)",
-      "Scenariji detekcije i noćni rad (IR, WDR, osvjetljenje gdje ima smisla)",
-      "Deployment i testiranje na stvarnim scenarijima (lažno pozitivni vs. signal)"
+      "Analizu perimetra i kritičnih zona",
+      "Optimizaciju nadzora za noćne uvjete",
+      "Testiranje pokrivenosti i vidljivosti prije predaje"
     ],
     imageSrc: "/images/placeholders/service-security.svg",
     imageAlt: "Tehničar postavlja novu kameru uz postojeću infrastrukturu"
   },
   {
     slug: "smart-security-integration",
-    title: "Smart Security Integration",
+    title: "Integrirani sigurnosni sustavi",
     description:
-      "Future‑proof integracije: video nadzor kao jezgra, uz mogućnost proširenja na alarme i kontrolu pristupa.",
+      "Sustavi spremni za buduće nadogradnje poput alarma, kontrole pristupa i automatizacije.",
     details:
-      "Dizajniramo sigurnosnu arhitekturu koja raste s vama. Integracije planiramo unaprijed, tako da novi slojevi ne ruše postojeći monitoring i operativu.",
+      "Projektiramo infrastrukturu koja može rasti s objektom i potrebama poslovanja.",
     includes: [
-      "Plan integracije (alarm, senzori, access control, smart locks) prema roadmapu",
-      "Uloge i pravila: tko vidi što i kada (audit-friendly postavke)",
-      "Dokumentacija sustava i standardizacija za portfelje"
+      "Plan budućih nadogradnji i integracija",
+      "Strukturu pristupa i korisničkih prava",
+      "Standardizaciju za više objekata"
     ],
     imageSrc: "/images/placeholders/service-security.svg",
     imageAlt: "Servis tehničara uz rack s NVR opremom"
   },
   {
     slug: "security-consultation-system-design",
-    title: "Security Consultation & System Design",
-    description:
-      "Procjena rizika, dizajn sustava i izvedbeni plan — pripremljeno za vlasnika, upravu i budžetiranje.",
+    title: "Sigurnosno savjetovanje",
+    description: "Procjena objekta i plan sigurnosnog sustava prije ulaganja u opremu.",
     details:
-      "Konzultacije su mjesto gdje se štedi najviše: definicija ciljeva, zona, privatnosti i CAPEX/OPEX-a prije deploymenta. Dobivate jasan blueprint za premium smart security.",
+      "Jasan prijedlog što ima smisla, gdje i zašto — bez nepotrebne opreme.",
     includes: [
-      "Procjena objekta i operativnih scenarija (rental, hotel, poslovni timovi)",
-      "Blueprint topologije (kamere, pohrana, mreža, napajanje, redundantnost)",
-      "Plan faza deploymenta i okvir CAPEX/OPEX za donošenje odluke"
+      "Procjenu objekta i načina korištenja",
+      "Preporuku sustava i rasporeda opreme",
+      "Plan implementacije i okvir investicije"
     ],
     imageSrc: "/images/placeholders/service-security.svg",
     imageAlt: "Tim pregledava tlocrte objekta i zonu video nadzora"
@@ -135,90 +133,128 @@ export const PRODUCT_CATEGORIES = [
 
 export const HOW_IT_WORKS_STEPS = [
   {
-    title: "Security assessment",
+    title: "Procjena objekta i rizika",
     description:
-      "Radimo security assessment nekretnine: mapiramo rizik po zoni, analiziramo vrijedne točke i scenarije incidenta (rental, hotel, poslovni prostori)."
+      "Pregledavamo raspored objekta, ključne zone i način korištenja prostora."
   },
   {
-    title: "System design",
+    title: "Projektiranje sustava",
     description:
-      "Definiramo sigurnosnu arhitekturu: preporučeni raspored kamera, monitoring plan, pohrana, pravila obavijesti i logika pregleda za tim."
+      "Planiramo raspored opreme, pokrivenost zona i način upravljanja sustavom."
   },
   {
-    title: "System deployment",
+    title: "Ugradnja i puštanje u rad",
     description:
-      "Premium deployment sustava: postavljanje i spajanje video infrastrukture, kalibracija slike te provjera snimanja i detekcije u realnim uvjetima."
+      "Instaliramo opremu, konfiguriramo sustav i testiramo rad u realnim uvjetima."
   },
   {
-    title: "Setup & optimization",
+    title: "Predaja i podrška",
     description:
-      "Postavljamo monitoring pristup i optimiziramo tuning: role-based pregled, obavijesti po prioritetu i dorađivanje sustava dok radi stabilno — danju i noću."
+      "Predajemo sustav, obučavamo korisnike i ostajemo dostupni za prilagodbe."
   }
 ];
 
-/** Jedna brojka + konkretan ishod (sekcija Povjerenje). */
-export const SOCIAL_PROOF_MAIN_STAT = { label: "Instalirano u", value: "50+ objekata" } as const;
+/** Brojka + podnaslov (sekcija Povjerenje). */
+export const SOCIAL_PROOF_MAIN_STAT = {
+  headline: "50+ objekata",
+  body: "Vile, apartmani, hoteli i manji poslovni objekti diljem Hrvatske."
+} as const;
 
 export const SOCIAL_PROOF_OUTCOME =
-  "Full property visibility, remote security control i 24/7 monitoring capability — manje incidenata i brži sigurnosni odgovor, dokumentiran snimkama.";
+  "Manje nejasnoća u svakodnevnom radu, brža provjera situacija i pouzdan pregled događaja kad je potreban konkretan dokaz.";
 
 export const TESTIMONIALS = [
   {
     quote:
-      "U portfelju od šest vila konačno imamo jedinstven monitoring dashboard. Incident na bazenu riješimo brzim pregledom snimke i sigurnosnim uvidom, bez telefonskog maratona.",
-    attribution: "vlasnik portfelja najma, Zadar"
+      "Kod više vila najviše nam znači što sve možemo provjeriti iz jednog sustava. Kad se nešto dogodi, odmah imamo pregled situacije bez deset poziva i nagađanja.",
+    attribution: "vlasnik rental objekata, Zadar"
   },
   {
     quote:
-      "Boutique hotel — noćna smjena ima full property visibility na kritičnim zonama i opskrbnom hodniku u jednom sučelju. Osiguranje i tim za najam dobiju isti sigurnosni trag.",
-    attribution: "operations manager, Split"
+      "Noćna smjena i management imaju isti pregled nad ključnim zonama objekta. Sve je jednostavnije kad postoji jasan zapis događaja.",
+    attribution: "hotel operations manager, Split"
   },
   {
     quote:
-      "Živim u inozemstvu: remote security control i 24/7 monitoring capability za kritične zone — bez delegiranja provjere na lokaciju. Dobivam sigurnosni pregled i obavijesti odmah.",
-    attribution: "vlasnik vile, udaljeno upravljanje"
+      "Živim izvan Hrvatske pa mi je udaljeni pregled objekta velika sigurnost. Ne moram za svaku situaciju organizirati fizički obilazak.",
+    attribution: "vlasnik vile, remote upravljanje"
   }
 ] as const;
 
 export const FAQ_ITEMS = [
   {
-    question: "Kako funkcionira video nadzor sustav?",
+    question: "Kako funkcionira sustav video nadzora?",
     answer:
-      "Kamere snimaju i šalju video preko mreže na pohranu (NVR, oblak ili hibrid). Monitoring platforma omogućuje live pregled, pregled snimaka po vremenu i događajima te upravljanje korisnicima i pravima pristupa."
+      "Kamere snimaju i spremaju video zapis putem lokalne pohrane, mrežnog snimača ili kombiniranog sustava.\n\nSustav omogućuje live pregled, pregled snimki i udaljeni pristup s mobitela ili računala."
   },
   {
     question: "Mogu li pratiti objekt na daljinu?",
     answer:
-      "Da. Remote monitoring je standard: live pogled i pregled snimaka dostupni su na mobitelu i računalu, uz role-based pristupe (npr. vlasnik, uprava, recepcija, tehničar) i pravila obavijesti po zonama i prioritetu."
-  },
-  {
-    question: "Koliko je siguran sustav nadzora?",
-    answer:
-      "Sigurnost ovisi o dizajnu i postavkama: segmentirana mreža za video promet, jake lozinke i 2FA gdje je dostupno, minimalan broj admin računa te kontrola tko smije gledati ili izvoziti snimke. Sustav postavljamo tako da bude audit-friendly za operativu i vlasnike."
+      "Da.\n\nObjekt možete pratiti putem mobitela ili računala — uživo ili kroz pregled snimki. Pristup se može prilagoditi po korisnicima, primjerice za vlasnika, management ili osoblje."
   },
   {
     question: "Koliko dugo se čuvaju snimke?",
     answer:
-      "Trajanje čuvanja definiramo prema vašem riziku i proceduri: od nekoliko dana do više tjedana ili mjeseci. U ponudi su jasno navedeni kapacitet, broj kanala, rezolucija i politika automatskog brisanja."
+      "To ovisi o broju kamera, kvaliteti snimanja i kapacitetu pohrane.\n\nSustav planiramo prema objektu i vašim potrebama — od nekoliko dana do više tjedana pohrane."
   },
   {
-    question: "Što ako internet ili struja padnu?",
+    question: "Što ako nestane interneta?",
     answer:
-      "Ovisno o arhitekturi. Lokalni NVR nastavlja snimati i bez interneta; za kritične lokacije preporučujemo UPS za pohranu i mrežnu opremu. Obavijesti i udaljeni pristup ovise o redundantnoj vezi (npr. backup internet) koju možemo planirati u dizajnu."
+      "Ako objekt koristi lokalnu pohranu, sustav nastavlja snimati i bez interneta.\n\nInternet je potreban za udaljeni pristup i pregled sustava izvan lokacije."
+  },
+  {
+    question: "Što ako nestane struje?",
+    answer:
+      "Za važnije objekte preporučujemo dodatnu zaštitu napajanja (UPS) kako bi sustav ostao stabilan i tijekom kraćih prekida struje."
   },
   {
     question: "Je li video nadzor u skladu s privatnošću?",
     answer:
-      "Da, uz pravilno postavljanje. Radimo po načelu najmanjeg opsega: javne i servisne zone jasno označene, izbjegavanje privatnih prostora gostiju bez opravdanog interesa te jasna politika tko i kada pristupa snimkama."
+      "Da, uz pravilno planiranje sustava.\n\nKamere postavljamo tako da pokrivaju sigurnosno važne zone uz izbjegavanje privatnih prostora i nepotrebnog nadzora."
   },
   {
-    question: "Tko sve može gledati snimke?",
+    question: "Tko može gledati snimke?",
     answer:
-      "Samo korisnici koje vi odredite. Postavljamo role-based pristup (vlasnik, uprava, recepcija, facility/tehničar) i, gdje platforma podržava, audit log promjena i pregleda/izvoza snimki."
+      "Pristup imaju samo osobe koje vi odredite.\n\nSustav se može organizirati tako da različiti korisnici imaju različite razine pristupa."
   },
   {
-    question: "Može li se sustav proširiti na alarm / access control?",
+    question: "Mogu li više objekata pratiti iz jednog sustava?",
     answer:
-      "Da. Video surveillance i monitoring mogu biti jezgra, a sustav se može širiti na alarmne senzore i access control prema roadmapu. Bitno je planirati topologiju (mreža, napajanje, pohrana) unaprijed kako bi proširenje bilo „plug-in”, a ne novi projekt."
+      "Da.\n\nViše lokacija može se povezati u jedan pregled kako bi vlasnik ili management imali jednostavniji nadzor nad objektima."
+  },
+  {
+    question: "Koliko traje ugradnja?",
+    answer:
+      "To ovisi o veličini objekta i kompleksnosti sustava.\n\nManji objekti često se mogu završiti u jednom danu, dok veći sustavi zahtijevaju više faza postavljanja i konfiguracije."
+  },
+  {
+    question: "Treba li za ugradnju velika adaptacija objekta?",
+    answer:
+      "Ne nužno.\n\nKod velikog broja objekata sustav se može postaviti uz minimalne zahvate, ovisno o postojećoj infrastrukturi i rasporedu prostora."
+  },
+  {
+    question: "Što preporučujete za vile i apartmane?",
+    answer:
+      "Najčešće preporučujemo pregled ključnih zona poput ulaza, parkinga, prilaza i zajedničkih vanjskih prostora — bez nepotrebnog pokrivanja privatnih dijelova objekta."
+  },
+  {
+    question: "Može li se sustav kasnije proširiti?",
+    answer:
+      "Da.\n\nSustav se može nadograditi dodatnim kamerama, alarmom, kontrolom pristupa i drugim sigurnosnim rješenjima kako objekt raste ili se potrebe mijenjaju."
+  },
+  {
+    question: "Trebam li video nadzor ako već imam alarm?",
+    answer:
+      "Alarm i video nadzor imaju različitu ulogu.\n\nAlarm upozorava na događaj, dok video nadzor daje pregled situacije i mogućnost provjere što se stvarno dogodilo."
+  },
+  {
+    question: "Što ako ne znam koristiti sustav?",
+    answer:
+      "Nakon postavljanja pokazujemo osnovno korištenje sustava i način pregleda kamera i snimki.\n\nCilj je da sustav bude jednostavan za svakodnevno korištenje, bez nepotrebne kompleksnosti."
+  },
+  {
+    question: "Nudite li podršku nakon ugradnje?",
+    answer:
+      "Da.\n\nDostupni smo za prilagodbe, pomoć oko pristupa korisnika, provjere sustava i buduće nadogradnje prema potrebama objekta."
   }
 ] as const;

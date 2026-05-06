@@ -13,7 +13,7 @@ export default function ProductsPage() {
             className={SECTION_HEADING_MARKETING}
             eyebrow="Proizvodi"
             title="Kategorije opreme za video nadzor i monitoring sustave"
-            description="Strukturirani pregled komponenti smart security sustava — od kamere do pohrane i centraliziranog nadzora."
+            description="Strukturirani pregled komponenti sustava video nadzora — od kamere do pohrane i centraliziranog nadzora."
           />
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {PRODUCT_CATEGORIES.map((product) => (

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { MARKETING_CARD } from "@/components/marketing/section-panel";
 import { cn } from "@/lib/utils";
@@ -14,11 +15,12 @@ type BlogCardProps = {
   href: string;
 };
 
-/** Klasičan <a> umjesto next/link — pouzdana navigacija na stranicu članka u svim okruženjima. */
+/** next/link — ispravna klijentska navigacija bez sudaranja s Next routerom i sidrenim linkovima na istoj stranici. */
 export function BlogCard({ title, category, imageSrc, imageAlt, excerpt, dateLabel, readTimeLabel, href }: BlogCardProps) {
   return (
-    <a
+    <Link
       href={href}
+      prefetch
       className={cn(
         MARKETING_CARD,
         "group relative z-10 flex h-full cursor-pointer flex-col overflow-hidden p-4 no-underline outline-none ring-offset-slate-50 transition hover:-translate-y-0.5 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 active:scale-[0.99] touch-manipulation sm:p-5 md:p-6"
@@ -52,6 +54,6 @@ export function BlogCard({ title, category, imageSrc, imageAlt, excerpt, dateLab
         Pročitaj više
         <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" aria-hidden />
       </span>
-    </a>
+    </Link>
   );
 }

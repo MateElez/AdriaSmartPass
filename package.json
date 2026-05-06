@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "WATCHPACK_POLLING=true next dev --hostname 127.0.0.1",
-    "dev:clean": "rm -rf .next && WATCHPACK_POLLING=true next dev --hostname 127.0.0.1",
+    "dev": "next dev --hostname 127.0.0.1",
+    "dev:poll": "WATCHPACK_POLLING=true next dev --hostname 127.0.0.1",
+    "dev:turbo": "next dev --turbo --hostname 127.0.0.1",
+    "clean": "rm -rf .next",
+    "dev:clean": "npm run clean && next dev --hostname 127.0.0.1",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -12,7 +15,6 @@
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.11.17",
     "lucide-react": "^0.451.0",
     "next": "^14.2.18",
     "react": "^18.3.1",

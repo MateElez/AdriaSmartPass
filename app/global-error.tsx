@@ -2,6 +2,7 @@
 
 import "./globals.css";
 import Link from "next/link";
+import { fontBody, fontHeading } from "@/lib/fonts";
 
 /**
  * Zamjenjuje root layout kad padne kritična greška. Mora uključiti <html> i <body>
@@ -16,8 +17,8 @@ export default function GlobalError({
   reset: () => void;
 }) {
   return (
-    <html lang="hr">
-      <body className="antialiased">
+    <html lang="hr" className={`${fontHeading.variable} ${fontBody.variable}`}>
+      <body className={`${fontBody.className} antialiased`}>
         <div className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center gap-4 bg-slate-50 px-4 py-16 text-slate-900">
           <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Greška</p>
           <h1 className="font-heading text-3xl font-bold md:text-4xl">Dogodila se kritična pogreška.</h1>

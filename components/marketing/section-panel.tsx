@@ -6,15 +6,15 @@ export const SECTION_HEADING_MARKETING = "relative mx-0 max-w-3xl text-left";
 
 /** Kartice u mreži (problem, za koga, koraci, statistike …) */
 export const MARKETING_CARD =
-  "rounded-2xl border border-slate-300/70 bg-slate-50/80 shadow-soft backdrop-blur-sm transition hover:border-slate-400/70 hover:shadow-md";
+  "rounded-3xl border border-slate-200 bg-white shadow-subtle transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-soft";
 
 /** Veći blokovi (usluge, usporedbe Prije/Poslije) */
 export const MARKETING_SURFACE =
-  "rounded-3xl border border-slate-300/70 bg-slate-50/80 shadow-soft backdrop-blur-sm transition hover:border-slate-400/70";
+  "rounded-3xl border border-slate-200 bg-white shadow-subtle transition hover:border-slate-300";
 
 /** Naglašeni blok (npr. „Poslije”, istaknuti sadržaj) */
 export const MARKETING_SURFACE_EMPHASIS =
-  "rounded-3xl border border-slate-300/70 bg-gradient-to-br from-slate-200/70 via-slate-100/70 to-slate-50/80 shadow-soft backdrop-blur-sm";
+  "rounded-3xl border border-brand-200 bg-gradient-to-br from-brand-50 via-white to-white shadow-subtle";
 
 type SectionPanelProps = {
   id?: string;
@@ -28,7 +28,7 @@ export function SectionPanel({ id, children, className, innerClassName }: Sectio
     <div
       id={id}
       className={cn(
-        "scroll-mt-24 overflow-hidden rounded-3xl border border-slate-300/70 bg-gradient-to-b from-slate-50/80 via-slate-100/70 to-slate-200/50 shadow-soft ring-1 ring-slate-200/70",
+        "scroll-mt-24 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-subtle",
         className
       )}
     >
@@ -38,8 +38,8 @@ export function SectionPanel({ id, children, className, innerClassName }: Sectio
           innerClassName
         )}
       >
-        <div className="pointer-events-none absolute -right-16 top-0 h-48 w-48 rounded-full bg-slate-300/30 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-12 -left-12 h-40 w-40 rounded-full bg-slate-200/50 blur-3xl" />
+        <div className="pointer-events-none absolute -right-24 top-0 h-56 w-56 rounded-full bg-brand-200/35 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-brand-100/45 blur-3xl" />
         <div className="relative z-10">{children}</div>
       </div>
     </div>
