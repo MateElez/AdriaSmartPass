@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -37,6 +38,17 @@ import { KONTAKT_PRIMARY_BUTTON_LABEL } from "@/lib/kontakt-cta";
 import { cn } from "@/lib/utils";
 
 const HOME_BLOG_PREVIEW = BLOG_POSTS.slice(0, 3);
+
+/** Kartice u sekciji „Usluge” na početnoj — bez zasebnog bloka „Video nadzor”. */
+const LANDING_SERVICE_ITEMS = SERVICE_ITEMS.filter((s) => s.slug !== "video-surveillance-systems");
+
+/** Slike u `public/images/main/` — vizuali za sekcije landing stranice. */
+const MAIN_SECTION_IMAGES = {
+  oNama: {
+    src: "/images/main/modern_architecture_with_security_focus.jpeg",
+    alt: "Diskretna sigurnosna kamera na modernoj arhitekturi — premium izgled sustava"
+  }
+} as const;
 
 const PROBLEM_LANDING_CARDS: Array<{ title: string; body: string; Icon: typeof Lock }> = [
   {
@@ -91,103 +103,20 @@ const RJESENJE_COMPARE_POSLIJE = [
   }
 ] as const;
 
-/** Dinamički render — izbjegava povremeni Next 14 bug pri statičkom izvozu ove rute. */
-export const dynamic = "force-dynamic";
-
-function HeroMockDashboard() {
+function HeroMonitoringVisual() {
   return (
-    <div className="relative mx-auto w-full max-w-[560px]">
+    <div className="relative mx-auto w-full max-w-[580px] md:max-w-[500px] lg:max-w-[540px] xl:max-w-[560px]">
       <div className="pointer-events-none absolute -inset-8 rounded-[40px] bg-brand-500/15 blur-3xl" />
-      <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-soft">
-        <div className="flex items-center justify-between border-b border-slate-100 bg-white px-4 py-3">
-          <div className="flex items-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-full bg-rose-400" aria-hidden />
-            <span className="h-2.5 w-2.5 rounded-full bg-amber-300" aria-hidden />
-            <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" aria-hidden />
-          </div>
-          <div className="min-w-0 text-center">
-            <p className="truncate text-xs font-semibold text-slate-700">Adria Security — Monitoring pregled</p>
-            <p className="mt-0.5 text-[11px] text-slate-500">Live · Snimke · Događaji</p>
-          </div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-700">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
-            Aktivno
-          </span>
-        </div>
-
-        <div className="grid gap-4 p-4 sm:p-5">
-          <div className="flex flex-wrap items-center gap-2">
-            {[
-              { label: "Live", active: true },
-              { label: "Snimke", active: false },
-              { label: "Događaji", active: false }
-            ].map((tab) => (
-              <span
-                key={tab.label}
-                className={cn(
-                  "inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold",
-                  tab.active ? "border-brand-200 bg-brand-500/10 text-brand-700" : "border-slate-200 bg-white text-slate-600"
-                )}
-              >
-                {tab.label}
-              </span>
-            ))}
-          </div>
-
-          <div className="grid gap-3 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="rounded-2xl border border-slate-200 bg-white p-3 shadow-subtle">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">Kamere / zone</p>
-              <div className="mt-3 space-y-2">
-                {[
-                  { name: "Villa — Ulaz / Perimetar", meta: "Live pogled", tone: "bg-emerald-500", pill: "Live" },
-                  { name: "Parking zona", meta: "Snimanje u tijeku", tone: "bg-brand-500", pill: "Recording" },
-                  { name: "Servisni ulaz", meta: "Stabilno", tone: "bg-slate-400", pill: "OK" }
-                ].map((row) => (
-                  <div
-                    key={row.name}
-                    className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-3 py-3 transition hover:bg-white"
-                  >
-                    <span className={cn("mt-0.5 h-9 w-9 shrink-0 rounded-xl border border-slate-200 bg-white")} aria-hidden />
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate text-sm font-semibold text-slate-950">{row.name}</p>
-                      <p className="mt-0.5 truncate text-xs text-slate-500">{row.meta}</p>
-                    </div>
-                    <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[11px] font-semibold text-slate-700">
-                      <span className={cn("h-1.5 w-1.5 rounded-full", row.tone)} aria-hidden />
-                      {row.pill}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-3">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">Događaji</p>
-              <div className="mt-3 space-y-2">
-                {[
-                  { time: "22:14", label: "Detekcija kretanja", tone: "bg-brand-500" },
-                  { time: "21:48", label: "Pregled snimke", tone: "bg-slate-400" },
-                  { time: "21:06", label: "Provjera perimetra", tone: "bg-emerald-500" }
-                ].map((evt) => (
-                  <div key={evt.time + evt.label} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white px-3 py-3 shadow-subtle">
-                    <span className={cn("mt-1 h-2 w-2 rounded-full", evt.tone)} aria-hidden />
-                    <div className="min-w-0 flex-1">
-                      <p className="text-xs font-semibold text-slate-500">{evt.time}</p>
-                      <p className="mt-0.5 truncate text-sm font-medium text-slate-800">{evt.label}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-3 flex flex-wrap items-center gap-2">
-                {["Obavijesti: aktivno", "Pohrana: OK"].map((chip) => (
-                  <span key={chip} className="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[11px] font-semibold text-slate-600">
-                    {chip}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
+      <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-slate-100 shadow-soft">
+        <div className="relative aspect-[16/12] w-full md:aspect-[16/13]">
+          <Image
+            src="/images/galerija/monitoring-pregled.jpeg"
+            alt="Adria Security — monitoring pregled: live pogled, snimke i događaji"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 42vw, 560px"
+            className="object-cover object-top"
+            priority
+          />
         </div>
       </div>
     </div>
@@ -201,13 +130,9 @@ export default function HomePage() {
         id="pocetna"
         className="relative z-10 mx-auto w-full max-w-7xl scroll-mt-24 px-3 pb-16 pt-14 sm:px-4 sm:pb-20 sm:pt-16 md:px-6 md:pb-24 md:pt-20"
       >
-        <div className="grid items-start gap-10 md:grid-cols-[1.05fr_0.95fr] md:gap-12">
-          <div className="min-w-0">
-            <p className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-700 sm:px-4 sm:text-xs">
-            <ShieldCheck className="h-3.5 w-3.5 shrink-0" />
-            Premium video nadzor
-          </p>
-            <h1 className="mt-5 text-balance font-heading text-[2.65rem] font-black leading-[1.02] tracking-[-0.055em] text-slate-950 sm:mt-6 sm:text-5xl md:text-[4.25rem]">
+        <div className="grid items-start gap-10 md:grid-cols-[1.06fr_0.94fr] md:items-stretch md:gap-10 lg:gap-12">
+          <div className="min-w-0 flex flex-col md:h-full md:min-h-0">
+            <h1 className="text-balance font-heading text-[2.65rem] font-black leading-[1.02] tracking-[-0.055em] text-slate-950 sm:text-5xl md:text-[4.25rem]">
               Profesionalni{" "}
               <span className="text-brand-600">video nadzor</span> i{" "}
               <span className="text-brand-600">monitoring</span> za{" "}
@@ -217,7 +142,7 @@ export default function HomePage() {
               Projektiramo i ugrađujemo sustave video nadzora za ville, apartmane, hotele i poslovne objekte — uz diskretnu
               montažu, pouzdanu pohranu i jasan pregled događaja kad zatrebate mir ili dokaz.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-auto md:pt-6">
               <a
                 href="#kontakt"
                 className={cn(
@@ -242,8 +167,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="min-w-0 md:pt-2">
-            <HeroMockDashboard />
+          <div className="min-w-0 md:flex md:flex-col md:justify-end">
+            <HeroMonitoringVisual />
           </div>
         </div>
       </section>
@@ -362,13 +287,13 @@ export default function HomePage() {
             description="Projektiramo, ugrađujemo i konfiguriramo sigurnosne sustave prilagođene načinu rada vašeg objekta."
           />
           <div className="mt-10 grid gap-4 md:grid-cols-2">
-            {SERVICE_ITEMS.map((service) => (
+            {LANDING_SERVICE_ITEMS.map((service) => (
               <div
                 key={service.slug ?? service.title}
                 id={service.slug}
                 className={cn(
                   MARKETING_CARD,
-                  "scroll-mt-24 p-6 md:p-7 hover:-translate-y-0.5 hover:shadow-soft"
+                  "scroll-mt-24 overflow-hidden p-6 md:p-7 hover:-translate-y-0.5 hover:shadow-soft"
                 )}
               >
                 <div className="flex min-w-0 flex-col">
@@ -478,8 +403,18 @@ export default function HomePage() {
             title="Premium sigurnosni sustavi za moderne nekretnine"
             description="Adria Security Systems specijaliziran je za video nadzor i smart security sustave za vile, apartmane, hotele i manje poslovne objekte."
           />
-          <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-            <div className="min-w-0 space-y-4 text-[15px] leading-relaxed text-slate-700 md:text-lg">
+          <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div className="min-w-0 space-y-6">
+              <div className="relative aspect-[16/11] w-full overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-soft">
+                <Image
+                  src={MAIN_SECTION_IMAGES.oNama.src}
+                  alt={MAIN_SECTION_IMAGES.oNama.alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 55vw"
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="space-y-4 text-[15px] leading-relaxed text-slate-700 md:text-lg">
               <p>
                 Sustave prilagođavamo stvarnom načinu korištenja objekta — sezoni, smjenama gostiju, svakodnevnoj operativi i radu osoblja. Cilj je jasan pregled ključnih zona, pouzdan nadzor i jednostavnije upravljanje objektom kad niste na lokaciji.
               </p>
@@ -489,9 +424,10 @@ export default function HomePage() {
               <p>
                 Fokus nam je stabilan sustav, uredna izvedba i sigurnosna infrastruktura koja smanjuje operativni stres i daje vam stvaran pregled nad objektom.
               </p>
+              </div>
             </div>
 
-            <div className="grid gap-4">
+            <div className="grid w-full gap-4">
               {[
                 {
                   title: "Praktično",

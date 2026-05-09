@@ -109,7 +109,7 @@ export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
           </label>
           <Input
             type="email"
-            placeholder="email@primjer.hr"
+            placeholder="Upišite e-mail"
             className={cn(
               tone === "dark" &&
                 "border-slate-600/55 bg-slate-900/25 text-slate-100 placeholder:text-slate-500 focus:border-brand-400 focus:ring-brand-500/15"
@@ -128,7 +128,7 @@ export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
             Telefon *
           </label>
           <Input
-            placeholder="+385 XXX XXXX"
+            placeholder="+385 99 123 4567"
             className={cn(
               tone === "dark" &&
                 "border-slate-600/55 bg-slate-900/25 text-slate-100 placeholder:text-slate-500 focus:border-brand-400 focus:ring-brand-500/15"

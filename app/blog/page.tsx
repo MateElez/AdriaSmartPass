@@ -4,9 +4,6 @@ import { SectionHeading } from "@/components/marketing/section-heading";
 import { SiteShell } from "@/components/layout/site-shell";
 import { BLOG_POSTS } from "@/lib/blog-meta";
 
-/** Zaobilazi povremeni Next 14 webpack chunk bug pri SSG ove rute. */
-export const dynamic = "force-dynamic";
-
 export default function BlogIndexPage() {
   return (
     <SiteShell>

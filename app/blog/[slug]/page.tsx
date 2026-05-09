@@ -9,8 +9,8 @@ import { BLOG_POSTS } from "@/lib/blog-meta";
 
 type ParamsInput = Promise<{ slug: string }> | { slug: string };
 
-/** Zaobilazi povremeni Next 14 webpack chunk bug pri SSG ove rute. */
-export const dynamic = "force-dynamic";
+/** Samo poznati slugovi iz `generateStaticParams` — stabilniji dev/build od `force-dynamic` + SSG. */
+export const dynamicParams = false;
 
 async function resolveSlug(params: ParamsInput): Promise<string> {
   const resolved = params instanceof Promise ? await params : params;
