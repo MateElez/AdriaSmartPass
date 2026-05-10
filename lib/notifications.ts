@@ -1,8 +1,8 @@
 import { PROJECT_TYPE_OPTIONS } from "@/lib/constants";
 import { getResend } from "@/lib/resend-client";
 
-/** Verified production sender — must match Resend domain setup for `adriasmartpass.com`. */
-const RESEND_FROM = "Adria Security Systems <info@adriasmartpass.com>";
+/** Verified production sender — must match Resend domain setup for `adriasecuritysystems.com`. */
+const RESEND_FROM = "Adria Security Systems <info@adriasecuritysystems.com>";
 
 /** Minimal fields needed for outbound lead emails (contact intake payload). */
 export type LeadEmailPayload = {

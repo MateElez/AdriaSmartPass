@@ -2,7 +2,7 @@
 
 Email-only contact flow (`POST /api/contact` → Resend). **No database.**
 
-The sender address is fixed in application code: **`Adria Security Systems <info@adriasmartpass.com>`** (domain must be verified in Resend).
+The sender address is fixed in application code: **`Adria Security Systems <info@adriasecuritysystems.com>`** (domain must be verified in Resend).
 
 ## Required environment variables (production)
 
@@ -17,11 +17,11 @@ The sender address is fixed in application code: **`Adria Security Systems <info
 |---------|----------------|
 | `RESEND_API_KEY` | No Resend client; **no emails sent**. API still returns success when the form payload is valid. |
 | Both `LEAD_NOTIFY_EMAIL` and `NOTIFY_OWNER_EMAIL` empty | **Owner notification skipped**; user confirmation may still send if `RESEND_API_KEY` is set. |
-| Domain / sender not verified in Resend for `info@adriasmartpass.com` | Resend may reject sends; check the Resend dashboard logs. |
+| Domain / sender not verified in Resend for `info@adriasecuritysystems.com` | Resend may reject sends; check the Resend dashboard logs. |
 
 ## Resend verification
 
-- Verify **`adriasmartpass.com`** (or the domain used for `info@adriasmartpass.com`) in Resend.
+- Verify **`adriasecuritysystems.com`** (or the domain used for `info@adriasecuritysystems.com`) in Resend.
 - Do not use Resend sandbox-only senders in production.
 
 ## Optional

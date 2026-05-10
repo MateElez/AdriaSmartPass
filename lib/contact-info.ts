@@ -1,5 +1,5 @@
 /** Javna kontakt e-adresa. */
-export const CONTACT_EMAIL = "adriasmartpass@gmail.com";
+export const CONTACT_EMAIL = "info@adriasecuritysystems.com";
 
 /** Telefoni za kontakt (href bez razmaka za tel:, prikaz s razmacima). Red: Ivan prvi. */
 export const CONTACT_PHONE_NUMBERS = [
