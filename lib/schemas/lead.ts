@@ -6,6 +6,8 @@ const phoneRegex = /^[+0-9()\-\s]{6,30}$/;
 export const createLeadSchema = z.object({
   fullName: z.string().trim().min(2, "Ime i prezime je obavezno").max(120),
   email: z.string().trim().email("Neispravna e-mail adresa").max(140),
+  /** Honeypot — mora ostati prazan. */
+  fax: z.string().max(0).optional(),
   phone: z
     .string()
     .trim()

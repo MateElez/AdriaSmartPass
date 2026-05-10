@@ -22,7 +22,8 @@ const defaultValues: CreateLeadInput = {
   company: "",
   projectType: "APARTMENT",
   message: "",
-  source: "website"
+  source: "website",
+  fax: ""
 };
 
 const SUBMIT_ERROR_MESSAGE = "Došlo je do greške. Pokušajte ponovno.";
@@ -43,6 +44,12 @@ export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values)
       });
+
+      if (response.status === 429) {
+        const data = (await response.json().catch(() => null)) as { error?: string } | null;
+        setSubmitError(data?.error ?? SUBMIT_ERROR_MESSAGE);
+        return;
+      }
 
       if (!response.ok) {
         setSubmitError(SUBMIT_ERROR_MESSAGE);
@@ -65,11 +72,16 @@ export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
     <form
       onSubmit={handleSubmit(onSubmit)}
       className={cn(
+        "relative",
         tone === "dark"
           ? "min-w-0 space-y-5 rounded-3xl border border-slate-600/45 bg-slate-700/20 p-5 shadow-subtle backdrop-blur-sm md:p-8"
           : cn(MARKETING_SURFACE, "min-w-0 space-y-5 p-5 md:p-8")
       )}
     >
+      <div className="absolute left-0 top-0 -z-10 h-px w-px overflow-hidden opacity-0" aria-hidden="true">
+        <label htmlFor="contact-fax">Fax</label>
+        <Input id="contact-fax" {...register("fax")} tabIndex={-1} autoComplete="off" />
+      </div>
       {submitError ? (
         <p
           className={cn(

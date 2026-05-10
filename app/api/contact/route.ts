@@ -23,6 +23,20 @@ async function sendLeadEmailsSafely(leadId: string, notify: () => Promise<void>,
 
 /** Jedini aktivni endpoint za kontakt upite — samo Resend e-mailovi, bez baze. */
 export async function POST(request: NextRequest) {
+  const raw = await request.json().catch(() => null);
+  const payload =
+    raw && typeof raw === "object" && !Array.isArray(raw)
+      ? { ...raw, fullName: (raw as Record<string, unknown>).fullName ?? (raw as Record<string, unknown>).name }
+      : raw;
+
+  const faxHp =
+    payload && typeof payload === "object" && !Array.isArray(payload)
+      ? String((payload as Record<string, unknown>).fax ?? "").trim()
+      : "";
+  if (faxHp) {
+    return NextResponse.json({ success: true, leadId: randomUUID() }, { status: 201 });
+  }
+
   const identifier = getClientIdentifier(request);
   const rateLimitResult = checkRateLimit(`lead-intake:${identifier}`, {
     limit: 5,
@@ -44,11 +58,6 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const raw = await request.json().catch(() => null);
-  const payload =
-    raw && typeof raw === "object" && !Array.isArray(raw)
-      ? { ...raw, fullName: (raw as Record<string, unknown>).fullName ?? (raw as Record<string, unknown>).name }
-      : raw;
   const parsed = createLeadSchema.safeParse(payload);
 
   if (!parsed.success) {
